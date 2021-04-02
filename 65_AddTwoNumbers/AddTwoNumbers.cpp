@@ -35,7 +35,7 @@ int Add(int num1, int num2)
 }
 
 // ====================测试代码====================
-void Test(int num1, int num2, int expected)
+void test(int num1, int num2, int expected)
 {
     int result = Add(num1, num2);
     if(result == expected)
@@ -46,16 +46,16 @@ void Test(int num1, int num2, int expected)
 
 int main(int argc, char* argv[])
 {
-    Test(1, 2, 3);
-    Test(111, 899, 1010);
+    test(1, 2, 3);
+    test(111, 899, 1010);
 
-    Test(-1, 2, 1);
-    Test(1, -2, -1);
+    test(-1, 2, 1);
+    test(1, -2, -1);
 
-    Test(3, 0, 3);
-    Test(0, -4, -4);
+    test(3, 0, 3);
+    test(0, -4, -4);
 
-    Test(-2, -8, -10);
+    test(-2, -8, -10);
 
     return 0;
 }

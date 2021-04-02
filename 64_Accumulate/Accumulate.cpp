@@ -111,9 +111,9 @@ template <> struct Sum_Solution4<0>
 };
 
 // ====================测试代码====================
-void Test(int n, int expected)
+void test(int n, int expected)
 {
-    printf("Test for %d begins:\n", n);
+    printf("test for %d begins:\n", n);
 
     if(Sum_Solution1(n) == expected)
         printf("Solution1 passed.\n");
@@ -131,44 +131,44 @@ void Test(int n, int expected)
         printf("Solution3 failed.\n");
 }
 
-void Test1()
+void test1()
 {
     const unsigned int number = 1;
     int expected = 1;
-    Test(number, expected);
+    test(number, expected);
     if(Sum_Solution4<number>::N == expected)
         printf("Solution4 passed.\n");
     else
         printf("Solution4 failed.\n");
 }
 
-void Test2()
+void test2()
 {
     const unsigned int number = 5;
     int expected = 15;
-    Test(number, expected);
+    test(number, expected);
     if(Sum_Solution4<number>::N == expected)
         printf("Solution4 passed.\n");
     else
         printf("Solution4 failed.\n");
 }
 
-void Test3()
+void test3()
 {
     const unsigned int number = 10;
     int expected = 55;
-    Test(number, expected);
+    test(number, expected);
     if(Sum_Solution4<number>::N == expected)
         printf("Solution4 passed.\n");
     else
         printf("Solution4 failed.\n");
 }
 
-void Test4()
+void test4()
 {
     const unsigned int number = 0;
     int expected = 0;
-    Test(number, expected);
+    test(number, expected);
     if(Sum_Solution4<number>::N == expected)
         printf("Solution4 passed.\n");
     else
@@ -177,10 +177,10 @@ void Test4()
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
+    test1();
+    test2();
+    test3();
+    test4();
 
     return 0;
 }

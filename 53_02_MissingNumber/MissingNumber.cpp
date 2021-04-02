@@ -48,7 +48,7 @@ int GetMissingNumber(const int* numbers, int length)
 }
 
 // ====================测试代码====================
-void Test(const char* testName, int numbers[], int length, int expected)
+void test(const char* testName, int numbers[], int length, int expected)
 {
     if(testName != nullptr)
         printf("%s begins: ", testName);
@@ -61,60 +61,60 @@ void Test(const char* testName, int numbers[], int length, int expected)
 }
 
 // 缺失的是第一个数字0
-void Test1()
+void test1()
 {
     int numbers[] = { 1, 2, 3, 4, 5 };
     int expected = 0;
-    Test("Test1", numbers, sizeof(numbers) / sizeof(int), expected);
+    test((char *)"test1", numbers, sizeof(numbers) / sizeof(int), expected);
 }
 
 // 缺失的是最后一个数字
-void Test2()
+void test2()
 {
     int numbers[] = { 0, 1, 2, 3, 4 };
     int expected = 5;
-    Test("Test2", numbers, sizeof(numbers) / sizeof(int), expected);
+    test((char *)"test2", numbers, sizeof(numbers) / sizeof(int), expected);
 }
 
 // 缺失的是中间某个数字0
-void Test3()
+void test3()
 {
     int numbers[] = { 0, 1, 2, 4, 5 };
     int expected = 3;
-    Test("Test3", numbers, sizeof(numbers) / sizeof(int), expected);
+    test((char *)"test3", numbers, sizeof(numbers) / sizeof(int), expected);
 }
 
 // 数组中只有一个数字，缺失的是第一个数字0
-void Test4()
+void test4()
 {
     int numbers[] = { 1 };
     int expected = 0;
-    Test("Test4", numbers, sizeof(numbers) / sizeof(int), expected);
+    test((char *)"Test4", numbers, sizeof(numbers) / sizeof(int), expected);
 }
 
 // 数组中只有一个数字，缺失的是最后一个数字1
-void Test5()
+void test5()
 {
     int numbers[] = { 0 };
     int expected = 1;
-    Test("Test5", numbers, sizeof(numbers) / sizeof(int), expected);
+    test((char *)"Test5", numbers, sizeof(numbers) / sizeof(int), expected);
 }
 
 // 空数组
-void Test6()
+void test6()
 {
     int expected = -1;
-    Test("Test6", nullptr, 0, expected);
+    test((char *)"Test6", nullptr, 0, expected);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
-    Test6();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
+    test6();
 
     return 0;
 }

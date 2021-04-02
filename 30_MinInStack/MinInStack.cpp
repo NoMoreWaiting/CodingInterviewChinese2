@@ -19,7 +19,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 #include <cstdio>
 #include "StackWithMin.h"
 
-void Test(const char* testName, const StackWithMin<int>& stack, int expected)
+void test(const char* testName, const StackWithMin<int>& stack, int expected)
 {
     if(testName != nullptr)
         printf("%s begins: ", testName);
@@ -35,28 +35,28 @@ int main(int argc, char* argv[])
     StackWithMin<int> stack;
 
     stack.push(3);
-    Test("Test1", stack, 3);
+    test((char *)"test1", stack, 3);
 
     stack.push(4);
-    Test("Test2", stack, 3);
+    test((char *)"test2", stack, 3);
 
     stack.push(2);
-    Test("Test3", stack, 2);
+    test((char *)"test3", stack, 2);
 
     stack.push(3);
-    Test("Test4", stack, 2);
+    test((char *)"Test4", stack, 2);
 
     stack.pop();
-    Test("Test5", stack, 2);
+    test((char *)"Test5", stack, 2);
 
     stack.pop();
-    Test("Test6", stack, 3);
+    test((char *)"Test6", stack, 3);
 
     stack.pop();
-    Test("Test7", stack, 3);
+    test((char *)"Test7", stack, 3);
 
     stack.push(0);
-    Test("Test8", stack, 0);
+    test((char *)"Test8", stack, 0);
 
     return 0;
 }

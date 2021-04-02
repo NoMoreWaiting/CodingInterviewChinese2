@@ -50,7 +50,7 @@ const BinaryTreeNode* KthNodeCore(const BinaryTreeNode* pRoot, unsigned int& k)
 }
 
 // ====================测试代码====================
-void Test(const char* testName, const BinaryTreeNode* pRoot, unsigned int k, bool isNull, int expected)
+void test(const char* testName, const BinaryTreeNode* pRoot, unsigned int k, bool isNull, int expected)
 {
     if(testName != nullptr)
         printf("%s begins: ", testName);
@@ -79,15 +79,15 @@ void TestA()
     ConnectTreeNodes(pNode6, pNode5, pNode7);
     ConnectTreeNodes(pNode10, pNode9, pNode11);
 
-    Test("TestA0", pNode8, 0, true, -1);
-    Test("TestA1", pNode8, 1, false, 5);
-    Test("TestA2", pNode8, 2, false, 6);
-    Test("TestA3", pNode8, 3, false, 7);
-    Test("TestA4", pNode8, 4, false, 8);
-    Test("TestA5", pNode8, 5, false, 9);
-    Test("TestA6", pNode8, 6, false, 10);
-    Test("TestA7", pNode8, 7, false, 11);
-    Test("TestA8", pNode8, 8, true, -1);
+    test((char *)"TestA0", pNode8, 0, true, -1);
+    test((char *)"TestA1", pNode8, 1, false, 5);
+    test((char *)"TestA2", pNode8, 2, false, 6);
+    test((char *)"TestA3", pNode8, 3, false, 7);
+    test((char *)"TestA4", pNode8, 4, false, 8);
+    test((char *)"TestA5", pNode8, 5, false, 9);
+    test((char *)"TestA6", pNode8, 6, false, 10);
+    test((char *)"TestA7", pNode8, 7, false, 11);
+    test((char *)"TestA8", pNode8, 8, true, -1);
 
     DestroyTree(pNode8);
 
@@ -116,13 +116,13 @@ void TestB()
     ConnectTreeNodes(pNode3, pNode2, nullptr);
     ConnectTreeNodes(pNode2, pNode1, nullptr);
 
-    Test("TestB0", pNode5, 0, true, -1);
-    Test("TestB1", pNode5, 1, false, 1);
-    Test("TestB2", pNode5, 2, false, 2);
-    Test("TestB3", pNode5, 3, false, 3);
-    Test("TestB4", pNode5, 4, false, 4);
-    Test("TestB5", pNode5, 5, false, 5);
-    Test("TestB6", pNode5, 6, true, -1);
+    test((char *)"TestB0", pNode5, 0, true, -1);
+    test((char *)"TestB1", pNode5, 1, false, 1);
+    test((char *)"TestB2", pNode5, 2, false, 2);
+    test((char *)"TestB3", pNode5, 3, false, 3);
+    test((char *)"TestB4", pNode5, 4, false, 4);
+    test((char *)"TestB5", pNode5, 5, false, 5);
+    test((char *)"TestB6", pNode5, 6, true, -1);
 
     DestroyTree(pNode5);
 
@@ -151,13 +151,13 @@ void TestC()
     ConnectTreeNodes(pNode3, nullptr, pNode4);
     ConnectTreeNodes(pNode4, nullptr, pNode5);
 
-    Test("TestC0", pNode1, 0, true, -1);
-    Test("TestC1", pNode1, 1, false, 1);
-    Test("TestC2", pNode1, 2, false, 2);
-    Test("TestC3", pNode1, 3, false, 3);
-    Test("TestC4", pNode1, 4, false, 4);
-    Test("TestC5", pNode1, 5, false, 5);
-    Test("TestC6", pNode1, 6, true, -1);
+    test((char *)"TestC0", pNode1, 0, true, -1);
+    test((char *)"TestC1", pNode1, 1, false, 1);
+    test((char *)"TestC2", pNode1, 2, false, 2);
+    test((char *)"TestC3", pNode1, 3, false, 3);
+    test((char *)"TestC4", pNode1, 4, false, 4);
+    test((char *)"TestC5", pNode1, 5, false, 5);
+    test((char *)"TestC6", pNode1, 6, true, -1);
 
     DestroyTree(pNode1);
 
@@ -169,9 +169,9 @@ void TestD()
 {
     BinaryTreeNode* pNode1 = CreateBinaryTreeNode(1);
 
-    Test("TestD0", pNode1, 0, true, -1);
-    Test("TestD1", pNode1, 1, false, 1);
-    Test("TestD2", pNode1, 2, true, -1);
+    test((char *)"TestD0", pNode1, 0, true, -1);
+    test((char *)"TestD1", pNode1, 1, false, 1);
+    test((char *)"TestD2", pNode1, 2, true, -1);
 
     DestroyTree(pNode1);
 
@@ -181,8 +181,8 @@ void TestD()
 // empty tree
 void TestE()
 {
-    Test("TestE0", nullptr, 0, true, -1);
-    Test("TestE1", nullptr, 1, true, -1);
+    test((char *)"TestE0", nullptr, 0, true, -1);
+    test((char *)"TestE1", nullptr, 1, true, -1);
 
     printf("\n\n");
 }

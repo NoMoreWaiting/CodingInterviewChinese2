@@ -42,7 +42,7 @@ int GetNumberSameAsIndex(const int* numbers, int length)
 }
 
 // ====================测试代码====================
-void Test(const char* testName, int numbers[], int length, int expected)
+void test(const char* testName, int numbers[], int length, int expected)
 {
     if(GetNumberSameAsIndex(numbers, length) == expected)
         printf("%s passed.\n", testName);
@@ -50,62 +50,62 @@ void Test(const char* testName, int numbers[], int length, int expected)
         printf("%s FAILED.\n", testName);
 }
 
-void Test1()
+void test1()
 {
     int numbers[] = { -3, -1, 1, 3, 5 };
     int expected = 3;
-    Test("Test1", numbers, sizeof(numbers) / sizeof(int), expected);
+    test((char *)"test1", numbers, sizeof(numbers) / sizeof(int), expected);
 }
 
-void Test2()
+void test2()
 {
     int numbers[] = { 0, 1, 3, 5, 6 };
     int expected = 0;
-    Test("Test2", numbers, sizeof(numbers) / sizeof(int), expected);
+    test((char *)"test2", numbers, sizeof(numbers) / sizeof(int), expected);
 }
 
-void Test3()
+void test3()
 {
     int numbers[] = { -1, 0, 1, 2, 4 };
     int expected = 4;
-    Test("Test3", numbers, sizeof(numbers) / sizeof(int), expected);
+    test((char *)"test3", numbers, sizeof(numbers) / sizeof(int), expected);
 }
 
-void Test4()
+void test4()
 {
     int numbers[] = { -1, 0, 1, 2, 5 };
     int expected = -1;
-    Test("Test4", numbers, sizeof(numbers) / sizeof(int), expected);
+    test((char *)"Test4", numbers, sizeof(numbers) / sizeof(int), expected);
 }
 
-void Test5()
+void test5()
 {
     int numbers[] = { 0 };
     int expected = 0;
-    Test("Test5", numbers, sizeof(numbers) / sizeof(int), expected);
+    test((char *)"Test5", numbers, sizeof(numbers) / sizeof(int), expected);
 }
 
-void Test6()
+void test6()
 {
     int numbers[] = { 10 };
     int expected = -1;
-    Test("Test6", numbers, sizeof(numbers) / sizeof(int), expected);
+    test((char *)"Test6", numbers, sizeof(numbers) / sizeof(int), expected);
 }
 
-void Test7()
+void test7()
 {
-    Test("Test7", nullptr, 0, -1);
+    test((char *)"Test7", nullptr, 0, -1);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
-    Test6();
-    Test7();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
+    test6();
+    test7();
 
     return 0;
 }

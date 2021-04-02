@@ -72,7 +72,7 @@ int GetTranslationCount(const string& number)
 }
 
 // ====================测试代码====================
-void Test(const string& testName, int number, int expected)
+void test(const string& testName, int number, int expected)
 {
     if(GetTranslationCount(number) == expected)
         cout << testName << " passed." << endl;
@@ -80,80 +80,80 @@ void Test(const string& testName, int number, int expected)
         cout << testName << " FAILED." << endl;
 }
 
-void Test1()
+void test1()
 {
     int number = 0;
     int expected = 1;
-    Test("Test1", number, expected);
+    test((char *)"test1", number, expected);
 }
 
-void Test2()
+void test2()
 {
     int number = 10;
     int expected = 2;
-    Test("Test2", number, expected);
+    test((char *)"test2", number, expected);
 }
 
-void Test3()
+void test3()
 {
     int number = 125;
     int expected = 3;
-    Test("Test3", number, expected);
+    test((char *)"test3", number, expected);
 }
 
-void Test4()
+void test4()
 {
     int number = 126;
     int expected = 2;
-    Test("Test4", number, expected);
+    test((char *)"Test4", number, expected);
 }
 
-void Test5()
+void test5()
 {
     int number = 426;
     int expected = 1;
-    Test("Test5", number, expected);
+    test((char *)"Test5", number, expected);
 }
 
-void Test6()
+void test6()
 {
     int number = 100;
     int expected = 2;
-    Test("Test6", number, expected);
+    test((char *)"Test6", number, expected);
 }
 
-void Test7()
+void test7()
 {
     int number = 101;
     int expected = 2;
-    Test("Test7", number, expected);
+    test((char *)"Test7", number, expected);
 }
 
-void Test8()
+void test8()
 {
     int number = 12258;
     int expected = 5;
-    Test("Test8", number, expected);
+    test((char *)"Test8", number, expected);
 }
 
-void Test9()
+void test9()
 {
     int number = -100;
     int expected = 0;
-    Test("Test9", number, expected);
+    test((char *)"Test9", number, expected);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
-    Test6();
-    Test7();
-    Test8();
-    Test9();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
+    test6();
+    test7();
+    test8();
+    test9();
 
     return 0;
 }

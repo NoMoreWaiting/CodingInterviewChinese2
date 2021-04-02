@@ -18,8 +18,9 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 则输出"student. a am I"。
 
 #include <cstdio>
-#include "..\Utilities\StringUtil.h"
+#include "StringUtil.h"
 #include <string>
+#include <cstring>
 
 char* ReverseSentence(char *pData)
 {
@@ -58,7 +59,7 @@ char* ReverseSentence(char *pData)
 }
 
 // ====================测试代码====================
-void Test(const char* testName, char* input, const char* expectedResult)
+void test(const char* testName, char* input, const char* expectedResult)
 {
     if(testName != nullptr)
         printf("%s begins: ", testName);
@@ -73,50 +74,50 @@ void Test(const char* testName, char* input, const char* expectedResult)
 }
 
 // 功能测试，句子中有多个单词
-void Test1()
+void test1()
 {
     char input[] = "I am a student.";
     char expected[] = "student. a am I";
 
-    Test("Test1", input, expected);
+    test((char *)"test1", input, expected);
 }
 
 // 功能测试，句子中只有一个单词
-void Test2()
+void test2()
 {
     char input[] = "Wonderful";
     char expected[] = "Wonderful";
 
-    Test("Test2", input, expected);
+    test((char *)"test2", input, expected);
 }
 
 // 鲁棒性测试
-void Test3()
+void test3()
 {
-    Test("Test3", nullptr, nullptr);
+    test((char *)"test3", nullptr, nullptr);
 }
 
 // 边界值测试，测试空字符串
-void Test4()
+void test4()
 {
-    Test("Test4", "", "");
+    test((char *)"Test4", (char *)"", "");
 }
 
 // 边界值测试，字符串中只有空格
-void Test5()
+void test5()
 {
     char input[] = "   ";
     char expected[] = "   ";
-    Test("Test5", input, expected);
+    test((char *)"Test5", input, expected);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
 
     return 0;
 }

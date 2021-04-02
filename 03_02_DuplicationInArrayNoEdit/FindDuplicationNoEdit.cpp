@@ -87,7 +87,7 @@ void test1()
 {
     int numbers[] = { 2, 3, 5, 4, 3, 2, 6, 7 };
     int duplications[] = { 2, 3 };
-    test("test1", numbers, sizeof(numbers) / sizeof(int), duplications, sizeof(duplications) / sizeof(int));
+    test((char *)"test1", numbers, sizeof(numbers) / sizeof(int), duplications, sizeof(duplications) / sizeof(int));
 }
 
 // 一个重复的数字
@@ -95,7 +95,7 @@ void test2()
 {
     int numbers[] = { 3, 2, 1, 4, 4, 5, 6, 7 };
     int duplications[] = { 4 };
-    test("test2", numbers, sizeof(numbers) / sizeof(int), duplications, sizeof(duplications) / sizeof(int));
+    test((char *)"test2", numbers, sizeof(numbers) / sizeof(int), duplications, sizeof(duplications) / sizeof(int));
 }
 
 // 重复的数字是数组中最小的数字
@@ -103,7 +103,7 @@ void test3()
 {
     int numbers[] = { 1, 2, 3, 4, 5, 6, 7, 1, 8 };
     int duplications[] = { 1 };
-    test("test3", numbers, sizeof(numbers) / sizeof(int), duplications, sizeof(duplications) / sizeof(int));
+    test((char *)"test3", numbers, sizeof(numbers) / sizeof(int), duplications, sizeof(duplications) / sizeof(int));
 }
 
 // 重复的数字是数组中最大的数字

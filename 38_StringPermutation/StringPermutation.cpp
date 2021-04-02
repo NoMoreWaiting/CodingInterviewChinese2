@@ -52,12 +52,12 @@ void Permutation(char* pStr, char* pBegin)
 }
 
 // ====================测试代码====================
-void Test(char* pStr)
+void test(char* pStr)
 {
     if(pStr == nullptr)
-        printf("Test for nullptr begins:\n");
+        printf("test for nullptr begins:\n");
     else
-        printf("Test for %s begins:\n", pStr);
+        printf("test for %s begins:\n", pStr);
 
     Permutation(pStr);
 
@@ -66,19 +66,19 @@ void Test(char* pStr)
 
 int main(int argc, char* argv[])
 {
-    Test(nullptr);
+    test(nullptr);
 
     char string1[] = "";
-    Test(string1);
+    test(string1);
 
     char string2[] = "a";
-    Test(string2);
+    test(string2);
 
     char string3[] = "ab";
-    Test(string3);
+    test(string3);
 
     char string4[] = "abc";
-    Test(string4);
+    test(string4);
 
     return 0;
 }

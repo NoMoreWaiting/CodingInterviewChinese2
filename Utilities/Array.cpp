@@ -12,9 +12,9 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 作者：何海涛
 //==================================================================
 
-#include <stdlib.h>
+#include <cstdlib>
 #include "Array.h"
-#include <exception>
+#include <stdexcept>
 
 // Random Partition
 int RandomInRange(int min, int max)
@@ -33,7 +33,7 @@ void Swap(int* num1, int* num2)
 int Partition(int data[], int length, int start, int end)
 {
     if(data == nullptr || length <= 0 || start < 0 || end >= length)
-        throw new std::exception("Invalid Parameters");
+        throw  std::invalid_argument("Invalid Parameters");
 
     int index = RandomInRange(start, end);
     Swap(&data[index], &data[end]);

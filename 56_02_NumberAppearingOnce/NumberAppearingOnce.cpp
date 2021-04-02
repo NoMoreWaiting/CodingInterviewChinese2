@@ -18,11 +18,12 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 
 #include <cstdio>
 #include <exception>
+#include <stdexcept>
 
 int FindNumberAppearingOnce(int numbers[], int length)
 {
     if(numbers == nullptr || length <= 0)
-        throw new std::exception("Invalid input.");
+        throw  std::invalid_argument("Invalid input.");
 
     int bitSum[32] = {0};
     for(int i = 0; i < length; ++i)
@@ -49,7 +50,7 @@ int FindNumberAppearingOnce(int numbers[], int length)
 }
 
 // ====================测试代码====================
-void Test(const char* testName, int numbers[], int length, int expected)
+void test(const char* testName, int numbers[], int length, int expected)
 {
     int result = FindNumberAppearingOnce(numbers, length);
     if(result == expected)
@@ -59,88 +60,88 @@ void Test(const char* testName, int numbers[], int length, int expected)
 }
 
 // 所有数字都是正数，唯一的数字是最小的
-void Test1()
+void test1()
 {
     int numbers[] = { 1, 1, 2, 2, 2, 1, 3 };
     int expected = 3;
-    Test("Test1", numbers, sizeof(numbers) / sizeof(int), expected);
+    test((char *)"test1", numbers, sizeof(numbers) / sizeof(int), expected);
 }
 
 // 所有数字都是正数，唯一的数字的大小位于中间
-void Test2()
+void test2()
 {
     int numbers[] = { 4, 3, 3, 2, 2, 2, 3 };
     int expected = 4;
-    Test("Test2", numbers, sizeof(numbers) / sizeof(int), expected);
+    test((char *)"test2", numbers, sizeof(numbers) / sizeof(int), expected);
 }
 
 // 所有数字都是正数，唯一的数字是最大的
-void Test3()
+void test3()
 {
     int numbers[] = { 4, 4, 1, 1, 1, 7, 4 };
     int expected = 7;
-    Test("Test3", numbers, sizeof(numbers) / sizeof(int), expected);
+    test((char *)"test3", numbers, sizeof(numbers) / sizeof(int), expected);
 }
 
 // 唯一的数字是负数
-void Test4()
+void test4()
 {
     int numbers[] = { -10, 214, 214, 214 };
     int expected = -10;
-    Test("Test4", numbers, sizeof(numbers) / sizeof(int), expected);
+    test((char *)"Test4", numbers, sizeof(numbers) / sizeof(int), expected);
 }
 
 // 除了唯一的数字，其他数字都是负数
-void Test5()
+void test5()
 {
     int numbers[] = { -209, 3467, -209, -209 };
     int expected = 3467;
-    Test("Test5", numbers, sizeof(numbers) / sizeof(int), expected);
+    test((char *)"Test5", numbers, sizeof(numbers) / sizeof(int), expected);
 }
 
 // 重复的数字有正数也有负数
-void Test6()
+void test6()
 {
     int numbers[] = { 1024, -1025, 1024, -1025, 1024, -1025, 1023 };
     int expected = 1023;
-    Test("Test6", numbers, sizeof(numbers) / sizeof(int), expected);
+    test((char *)"Test6", numbers, sizeof(numbers) / sizeof(int), expected);
 }
 
 // 所有数字都是负数
-void Test7()
+void test7()
 {
     int numbers[] = { -1024, -1024, -1024, -1023 };
     int expected = -1023;
-    Test("Test7", numbers, sizeof(numbers) / sizeof(int), expected);
+    test((char *)"Test7", numbers, sizeof(numbers) / sizeof(int), expected);
 }
 
 // 唯一的数字是0
-void Test8()
+void test8()
 {
     int numbers[] = { -23, 0, 214, -23, 214, -23, 214 };
     int expected = 0;
-    Test("Test8", numbers, sizeof(numbers) / sizeof(int), expected);
+    test((char *)"Test8", numbers, sizeof(numbers) / sizeof(int), expected);
 }
 
 // 除了唯一的数字，其他数字都是0
-void Test9()
+void test9()
 {
     int numbers[] = { 0, 3467, 0, 0, 0, 0, 0, 0 };
     int expected = 3467;
-    Test("Test9", numbers, sizeof(numbers) / sizeof(int), expected);
+    test((char *)"Test9", numbers, sizeof(numbers) / sizeof(int), expected);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
-    Test6();
-    Test7();
-    Test8();
-    Test9();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
+    test6();
+    test7();
+    test8();
+    test9();
 
     return 0;
 }

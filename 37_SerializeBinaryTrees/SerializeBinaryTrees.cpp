@@ -16,7 +16,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 题目：请实现两个函数，分别用来序列化和反序列化二叉树。
 
 #include <cstdio>
-#include "..\Utilities\BinaryTree.h"
+#include "BinaryTree.h"
 #include <iostream>
 #include <fstream>
 
@@ -77,7 +77,7 @@ void Deserialize(BinaryTreeNode** pRoot, istream& stream)
     }
 }
 
-// ==================== Test Code ====================
+// ==================== test Code ====================
 bool isSameTree(const BinaryTreeNode* pRoot1, const BinaryTreeNode* pRoot2)
 {
     if(pRoot1 == nullptr && pRoot2 == nullptr)
@@ -93,14 +93,14 @@ bool isSameTree(const BinaryTreeNode* pRoot1, const BinaryTreeNode* pRoot2)
         isSameTree(pRoot1->m_pRight, pRoot2->m_pRight);
 }
 
-void Test(const char* testName, const BinaryTreeNode* pRoot)
+void test(const char* testName, const BinaryTreeNode* pRoot)
 {
     if(testName != nullptr)
         printf("%s begins: \n", testName);
 
     PrintTree(pRoot);
 
-    char* fileName = "test.txt";
+    char* fileName = (char *)"test.txt";
     ofstream fileOut;
     fileOut.open(fileName);
 
@@ -138,7 +138,7 @@ void Test(const char* testName, const BinaryTreeNode* pRoot)
 //            8
 //        6      10
 //       5 7    9  11
-void Test1()
+void test1()
 {
     BinaryTreeNode* pNode8 = CreateBinaryTreeNode(8);
     BinaryTreeNode* pNode6 = CreateBinaryTreeNode(6);
@@ -152,7 +152,7 @@ void Test1()
     ConnectTreeNodes(pNode6, pNode5, pNode7);
     ConnectTreeNodes(pNode10, pNode9, pNode11);
 
-    Test("Test1", pNode8);
+    test((char *)"test1", pNode8);
 
     DestroyTree(pNode8);
 }
@@ -161,7 +161,7 @@ void Test1()
 //          4
 //        3
 //      2
-void Test2()
+void test2()
 {
     BinaryTreeNode* pNode5 = CreateBinaryTreeNode(5);
     BinaryTreeNode* pNode4 = CreateBinaryTreeNode(4);
@@ -172,7 +172,7 @@ void Test2()
     ConnectTreeNodes(pNode4, pNode3, nullptr);
     ConnectTreeNodes(pNode3, pNode2, nullptr);
 
-    Test("Test2", pNode5);
+    test((char *)"test2", pNode5);
 
     DestroyTree(pNode5);
 }
@@ -181,7 +181,7 @@ void Test2()
 //         4
 //          3
 //           2
-void Test3()
+void test3()
 {
     BinaryTreeNode* pNode5 = CreateBinaryTreeNode(5);
     BinaryTreeNode* pNode4 = CreateBinaryTreeNode(4);
@@ -192,23 +192,23 @@ void Test3()
     ConnectTreeNodes(pNode4, nullptr, pNode3);
     ConnectTreeNodes(pNode3, nullptr, pNode2);
 
-    Test("Test3", pNode5);
+    test((char *)"test3", pNode5);
 
     DestroyTree(pNode5);
 }
 
-void Test4()
+void test4()
 {
     BinaryTreeNode* pNode5 = CreateBinaryTreeNode(5);
 
-    Test("Test4", pNode5);
+    test((char *)"Test4", pNode5);
 
     DestroyTree(pNode5);
 }
 
-void Test5()
+void test5()
 {
-    Test("Test5", nullptr);
+    test((char *)"Test5", nullptr);
 }
 
 //        5
@@ -218,7 +218,7 @@ void Test5()
 //        5
 //       5 5
 //      5   5
-void Test6()
+void test6()
 {
     BinaryTreeNode* pNode1 = CreateBinaryTreeNode(5);
     BinaryTreeNode* pNode2 = CreateBinaryTreeNode(5);
@@ -238,19 +238,19 @@ void Test6()
     ConnectTreeNodes(pNode61, pNode71, nullptr);
     ConnectTreeNodes(pNode62, nullptr, pNode72);
 
-    Test("Test6", pNode1);
+    test((char *)"Test6", pNode1);
 
     DestroyTree(pNode1);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
-    Test6();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
+    test6();
 
     return 0;
 }

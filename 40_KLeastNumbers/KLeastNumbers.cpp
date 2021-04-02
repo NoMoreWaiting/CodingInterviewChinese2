@@ -17,7 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 这8个数字，则最小的4个数字是1、2、3、4。
 
 #include <cstdio>
-#include "..\Utilities\Array.h"
+#include "Array.h"
 
 #include <set>
 #include <vector>
@@ -84,7 +84,7 @@ void GetLeastNumbers_Solution2(const vector<int>& data, intSet& leastNumbers, in
 }
 
 // ====================测试代码====================
-void Test(char* testName, int* data, int n, int* expectedResult, int k)
+void test(char* testName, int* data, int n, int* expectedResult, int k)
 {
     if(testName != nullptr)
         printf("%s begins: \n", testName);
@@ -125,69 +125,69 @@ void Test(char* testName, int* data, int n, int* expectedResult, int k)
 }
 
 // k小于数组的长度
-void Test1()
+void test1()
 {
     int data[] = {4, 5, 1, 6, 2, 7, 3, 8};
     int expected[] = {1, 2, 3, 4};
-    Test("Test1", data, sizeof(data) / sizeof(int), expected, sizeof(expected) / sizeof(int));
+    test((char *)"test1", data, sizeof(data) / sizeof(int), expected, sizeof(expected) / sizeof(int));
 }
 
 // k等于数组的长度
-void Test2()
+void test2()
 {
     int data[] = {4, 5, 1, 6, 2, 7, 3, 8};
     int expected[] = {1, 2, 3, 4, 5, 6, 7, 8};
-    Test("Test2", data, sizeof(data) / sizeof(int), expected, sizeof(expected) / sizeof(int));
+    test((char *)"test2", data, sizeof(data) / sizeof(int), expected, sizeof(expected) / sizeof(int));
 }
 
 // k大于数组的长度
-void Test3()
+void test3()
 {
     int data[] = {4, 5, 1, 6, 2, 7, 3, 8};
     int* expected = nullptr;
-    Test("Test3", data, sizeof(data) / sizeof(int), expected, 10);
+    test((char *)"test3", data, sizeof(data) / sizeof(int), expected, 10);
 }
 
 // k等于1
-void Test4()
+void test4()
 {
     int data[] = {4, 5, 1, 6, 2, 7, 3, 8};
     int expected[] = {1};
-    Test("Test4", data, sizeof(data) / sizeof(int), expected, sizeof(expected) / sizeof(int));
+    test((char *)"Test4", data, sizeof(data) / sizeof(int), expected, sizeof(expected) / sizeof(int));
 }
 
 // k等于0
-void Test5()
+void test5()
 {
     int data[] = {4, 5, 1, 6, 2, 7, 3, 8};
     int* expected = nullptr;
-    Test("Test5", data, sizeof(data) / sizeof(int), expected, 0);
+    test((char *)"Test5", data, sizeof(data) / sizeof(int), expected, 0);
 }
 
 // 数组中有相同的数字
-void Test6()
+void test6()
 {
     int data[] = {4, 5, 1, 6, 2, 7, 2, 8};
     int expected[] = {1, 2};
-    Test("Test6", data, sizeof(data) / sizeof(int), expected, sizeof(expected) / sizeof(int));
+    test((char *)"Test6", data, sizeof(data) / sizeof(int), expected, sizeof(expected) / sizeof(int));
 }
 
 // 输入空指针
-void Test7()
+void test7()
 {
     int* expected = nullptr;
-    Test("Test7", nullptr, 0, expected, 0);
+    test((char *)"Test7", nullptr, 0, expected, 0);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
-    Test6();
-    Test7();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
+    test6();
+    test7();
 
     return 0;
 }

@@ -46,27 +46,27 @@ char FirstNotRepeatingChar(const char* pString)
 }
 
 // ====================测试代码====================
-void Test(const char* pString, char expected)
+void test(const char* pString, char expected)
 {
     if(FirstNotRepeatingChar(pString) == expected)
-        printf("Test passed.\n");
+        printf("test passed.\n");
     else
-        printf("Test failed.\n");
+        printf("test failed.\n");
 }
 
 int main(int argc, char* argv[])
 {
     // 常规输入测试，存在只出现一次的字符
-    Test("google", 'l');
+    test((char *)"google", 'l');
 
     // 常规输入测试，不存在只出现一次的字符
-    Test("aabccdbd", '\0');
+    test((char *)"aabccdbd", '\0');
 
     // 常规输入测试，所有字符都只出现一次
-    Test("abcdefg", 'a');
+    test((char *)"abcdefg", 'a');
 
     // 鲁棒性测试，输入nullptr
-    Test(nullptr, '\0');
+    test(nullptr, '\0');
 
     return 0;
 }

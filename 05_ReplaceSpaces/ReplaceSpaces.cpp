@@ -64,7 +64,7 @@ void ReplaceBlank(char str[], int length)
 }
 
 // ====================测试代码====================
-void Test(char* testName, char str[], int length, char expected[])
+void test(char* testName, char str[], int length, char expected[])
 {
     if(testName != nullptr)
         printf("%s begins: ", testName);
@@ -82,94 +82,94 @@ void Test(char* testName, char str[], int length, char expected[])
 }
 
 // 空格在句子中间
-void Test1()
+void test1()
 {
     const int length = 100;
 
     char str[length] = "hello world";
-    Test("Test1", str, length, "hello%20world");
+    test((char *)"test1", str, length, (char *)"hello%20world");
 }
 
 // 空格在句子开头
-void Test2()
+void test2()
 {
     const int length = 100;
 
     char str[length] = " helloworld";
-    Test("Test2", str, length, "%20helloworld");
+    test((char *)"test2", str, length, (char *)"%20helloworld");
 }
 
 // 空格在句子末尾
-void Test3()
+void test3()
 {
     const int length = 100;
 
     char str[length] = "helloworld ";
-    Test("Test3", str, length, "helloworld%20");
+    test((char *)"Test3", str, length, (char *)"helloworld%20");
 }
 
 // 连续有两个空格
-void Test4()
+void test4()
 {
     const int length = 100;
 
     char str[length] = "hello  world";
-    Test("Test4", str, length, "hello%20%20world");
+    test((char *)"Test4", str, length, (char *)"hello%20%20world");
 }
 
 // 传入nullptr
-void Test5()
+void test5()
 {
-    Test("Test5", nullptr, 0, nullptr);
+    test((char *)"Test5", nullptr, 0, nullptr);
 }
 
 // 传入内容为空的字符串
-void Test6()
+void test6()
 {
     const int length = 100;
 
     char str[length] = "";
-    Test("Test6", str, length, "");
+    test((char *)"Test6", str, length, (char *)"");
 }
 
 //传入内容为一个空格的字符串
-void Test7()
+void test7()
 {
     const int length = 100;
 
     char str[length] = " ";
-    Test("Test7", str, length, "%20");
+    test((char *)"Test7", str, length, (char *)"%20");
 }
 
 // 传入的字符串没有空格
-void Test8()
+void test8()
 {
     const int length = 100;
 
     char str[length] = "helloworld";
-    Test("Test8", str, length, "helloworld");
+    test((char *)"Test8", str, length, (char *)"helloworld");
 }
 
 // 传入的字符串全是空格
-void Test9()
+void test9()
 {
     const int length = 100;
 
     char str[length] = "   ";
-    Test("Test9", str, length, "%20%20%20");
+    test((char *)"Test9", str, length, (char *)"%20%20%20");
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
-    Test6();
-    Test7();
-    Test8();
-    Test9();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
+    test6();
+    test7();
+    test8();
+    test9();
 
     return 0;
 }

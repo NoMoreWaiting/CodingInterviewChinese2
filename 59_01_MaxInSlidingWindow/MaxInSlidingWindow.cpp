@@ -56,7 +56,7 @@ vector<int> maxInWindows(const vector<int>& num, unsigned int size)
 }
 
 // ====================测试代码====================
-void Test(const char* testName, const vector<int>& num, unsigned int size, const vector<int>& expected)
+void test(const char* testName, const vector<int>& num, unsigned int size, const vector<int>& expected)
 {
     if(testName != nullptr)
         printf("%s begins: ", testName);
@@ -80,7 +80,7 @@ void Test(const char* testName, const vector<int>& num, unsigned int size, const
         printf("FAILED.\n");
 }
 
-void Test1()
+void test1()
 {
     int num[] = { 2, 3, 4, 2, 6, 2, 5, 1 };
     vector<int> vecNumbers(num, num + sizeof(num) / sizeof(int));
@@ -90,10 +90,10 @@ void Test1()
 
     unsigned int size = 3;
 
-    Test("Test1", vecNumbers, size, vecExpected);
+    test((char *)"test1", vecNumbers, size, vecExpected);
 }
 
-void Test2()
+void test2()
 {
     int num[] = { 1, 3, -1, -3, 5, 3, 6, 7 };
     vector<int> vecNumbers(num, num + sizeof(num) / sizeof(int));
@@ -103,11 +103,11 @@ void Test2()
 
     unsigned int size = 3;
 
-    Test("Test2", vecNumbers, size, vecExpected);
+    test((char *)"test2", vecNumbers, size, vecExpected);
 }
 
 // 输入数组单调递增
-void Test3()
+void test3()
 {
     int num[] = { 1, 3, 5, 7, 9, 11, 13, 15 };
     vector<int> vecNumbers(num, num + sizeof(num) / sizeof(int));
@@ -117,11 +117,11 @@ void Test3()
 
     unsigned int size = 4;
 
-    Test("Test3", vecNumbers, size, vecExpected);
+    test((char *)"test3", vecNumbers, size, vecExpected);
 }
 
 // 输入数组单调递减
-void Test4()
+void test4()
 {
     int num[] = { 16, 14, 12, 10, 8, 6, 4 };
     vector<int> vecNumbers(num, num + sizeof(num) / sizeof(int));
@@ -131,11 +131,11 @@ void Test4()
 
     unsigned int size = 5;
 
-    Test("Test4", vecNumbers, size, vecExpected);
+    test((char *)"Test4", vecNumbers, size, vecExpected);
 }
 
 // 滑动窗口的大小为1
-void Test5()
+void test5()
 {
     int num[] = { 10, 14, 12, 11 };
     vector<int> vecNumbers(num, num + sizeof(num) / sizeof(int));
@@ -145,11 +145,11 @@ void Test5()
 
     unsigned int size = 1;
 
-    Test("Test5", vecNumbers, size, vecExpected);
+    test((char *)"Test5", vecNumbers, size, vecExpected);
 }
 
 // 滑动窗口的大小等于数组的长度
-void Test6()
+void test6()
 {
     int num[] = { 10, 14, 12, 11 };
     vector<int> vecNumbers(num, num + sizeof(num) / sizeof(int));
@@ -159,11 +159,11 @@ void Test6()
 
     unsigned int size = 4;
 
-    Test("Test6", vecNumbers, size, vecExpected);
+    test((char *)"Test6", vecNumbers, size, vecExpected);
 }
 
 // 滑动窗口的大小为0
-void Test7()
+void test7()
 {
     int num[] = { 10, 14, 12, 11 };
     vector<int> vecNumbers(num, num + sizeof(num) / sizeof(int));
@@ -172,11 +172,11 @@ void Test7()
 
     unsigned int size = 0;
 
-    Test("Test7", vecNumbers, size, vecExpected);
+    test((char *)"Test7", vecNumbers, size, vecExpected);
 }
 
 // 滑动窗口的大小大于输入数组的长度
-void Test8()
+void test8()
 {
     int num[] = { 10, 14, 12, 11 };
     vector<int> vecNumbers(num, num + sizeof(num) / sizeof(int));
@@ -185,31 +185,31 @@ void Test8()
 
     unsigned int size = 5;
 
-    Test("Test8", vecNumbers, size, vecExpected);
+    test((char *)"Test8", vecNumbers, size, vecExpected);
 }
 
 // 输入数组为空
-void Test9()
+void test9()
 {
     vector<int> vecNumbers;
     vector<int> vecExpected;
 
     unsigned int size = 5;
 
-    Test("Test9", vecNumbers, size, vecExpected);
+    test((char *)"Test9", vecNumbers, size, vecExpected);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
-    Test6();
-    Test7();
-    Test8();
-    Test9();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
+    test6();
+    test7();
+    test8();
+    test9();
 
     return 0;
 }

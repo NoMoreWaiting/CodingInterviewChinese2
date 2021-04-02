@@ -80,7 +80,7 @@ long long StrToIntCore(const char* digit, bool minus)
 }
 
 // ====================测试代码====================
-void Test(const char* string)
+void test(const char* string)
 {
     int result = StrToInt(string);
     if(result == 0 && g_nStatus == kInvalid)
@@ -91,39 +91,39 @@ void Test(const char* string)
 
 int main(int argc, char* argv[])
 {
-    Test(nullptr);
+    test(nullptr);
 
-    Test("");
+    test("");
 
-    Test("123");
+    test((char *)"123");
 
-    Test("+123");
+    test((char *)"+123");
     
-    Test("-123");
+    test((char *)"-123");
 
-    Test("1a33");
+    test((char *)"1a33");
 
-    Test("+0");
+    test((char *)"+0");
 
-    Test("-0");
+    test((char *)"-0");
 
     //有效的最大正整数, 0x7FFFFFFF
-    Test("+2147483647");    
+    test((char *)"+2147483647");
 
-    Test("-2147483647");
+    test((char *)"-2147483647");
 
-    Test("+2147483648");
+    test((char *)"+2147483648");
 
     //有效的最小负整数, 0x80000000
-    Test("-2147483648");    
+    test((char *)"-2147483648");
 
-    Test("+2147483649");
+    test((char *)"+2147483649");
 
-    Test("-2147483649");
+    test((char *)"-2147483649");
 
-    Test("+");
+    test((char *)"+");
 
-    Test("-");
+    test((char *)"-");
 
     return 0;
 }

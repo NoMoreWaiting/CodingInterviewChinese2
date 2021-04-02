@@ -16,8 +16,10 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 题目：输入两个树结点，求它们的最低公共祖先。
 
 #include <cstdio>
-#include "..\Utilities\Tree.h"
 #include <list>
+
+#include "Tree.h"
+
 
 using namespace std;
 
@@ -81,7 +83,7 @@ const TreeNode* GetLastCommonParent(const TreeNode* pRoot, const TreeNode* pNode
 }
 
 // ====================测试代码====================
-void Test(const char* testName, const TreeNode* pRoot, const TreeNode* pNode1, const TreeNode* pNode2, TreeNode* pExpected)
+void test(const char* testName, const TreeNode* pRoot, const TreeNode* pNode1, const TreeNode* pNode2, TreeNode* pExpected)
 {
     if(testName != nullptr)
         printf("%s begins: ", testName);
@@ -103,7 +105,7 @@ void Test(const char* testName, const TreeNode* pRoot, const TreeNode* pNode1, c
 //      4         5
 //     / \      / |  \
 //    6   7    8  9  10
-void Test1()
+void test1()
 {
     TreeNode* pNode1 = CreateTreeNode(1);
     TreeNode* pNode2 = CreateTreeNode(2);
@@ -129,7 +131,7 @@ void Test1()
     ConnectTreeNodes(pNode5, pNode9);
     ConnectTreeNodes(pNode5, pNode10);
 
-    Test("Test1", pNode1, pNode6, pNode8, pNode2);
+    test((char *)"test1", pNode1, pNode6, pNode8, pNode2);
 }
 
 // 树退化成一个链表
@@ -142,7 +144,7 @@ void Test1()
 //         4
 //        /
 //       5
-void Test2()
+void test2()
 {
     TreeNode* pNode1 = CreateTreeNode(1);
     TreeNode* pNode2 = CreateTreeNode(2);
@@ -155,7 +157,7 @@ void Test2()
     ConnectTreeNodes(pNode3, pNode4);
     ConnectTreeNodes(pNode4, pNode5);
 
-    Test("Test2", pNode1, pNode5, pNode4, pNode3);
+    test((char *)"test2", pNode1, pNode5, pNode4, pNode3);
 }
 
 // 树退化成一个链表，一个结点不在树中
@@ -168,7 +170,7 @@ void Test2()
 //         4
 //        /
 //       5
-void Test3()
+void test3()
 {
     TreeNode* pNode1 = CreateTreeNode(1);
     TreeNode* pNode2 = CreateTreeNode(2);
@@ -183,21 +185,21 @@ void Test3()
 
     TreeNode* pNode6 = CreateTreeNode(6);
 
-    Test("Test3", pNode1, pNode5, pNode6, nullptr);
+    test((char *)"test3", pNode1, pNode5, pNode6, nullptr);
 }
 
 // 输入nullptr
-void Test4()
+void test4()
 {
-    Test("Test4", nullptr, nullptr, nullptr, nullptr);
+    test((char *)"Test4", nullptr, nullptr, nullptr, nullptr);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
+    test1();
+    test2();
+    test3();
+    test4();
 
     return 0;
 }

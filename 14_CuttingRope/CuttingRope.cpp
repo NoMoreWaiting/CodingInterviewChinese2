@@ -100,21 +100,21 @@ void test1()
 {
     int length = 1;
     int expected = 0;
-    test("test1", length, expected);
+    test((char *)"test1", length, expected);
 }
 
 void test2()
 {
     int length = 2;
     int expected = 1;
-    test("test2", length, expected);
+    test((char *)"test2", length, expected);
 }
 
 void test3()
 {
     int length = 3;
     int expected = 2;
-    test("test3", length, expected);
+    test((char *)"test3", length, expected);
 }
 
 void test4()

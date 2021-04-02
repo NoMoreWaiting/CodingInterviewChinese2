@@ -16,7 +16,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 题目：请完成一个函数，输入一个二叉树，该函数输出它的镜像。
 
 #include <cstdio>
-#include "..\Utilities\BinaryTree.h"
+#include "BinaryTree.h"
 #include <stack>
 
 void MirrorRecursively(BinaryTreeNode *pNode)
@@ -65,7 +65,7 @@ void MirrorIteratively(BinaryTreeNode* pRoot)
 //            8
 //        6      10
 //       5 7    9  11
-void Test1()
+void test1()
 {
     printf("=====Test1 starts:=====\n");
     BinaryTreeNode* pNode8 = CreateBinaryTreeNode(8);
@@ -99,7 +99,7 @@ void Test1()
 //        6 
 //      5
 //    4
-void Test2()
+void test2()
 {
     printf("=====Test2 starts:=====\n");
     BinaryTreeNode* pNode8 = CreateBinaryTreeNode(8);
@@ -132,7 +132,7 @@ void Test2()
 //              6 
 //               5
 //                4
-void Test3()
+void test3()
 {
     printf("=====Test3 starts:=====\n");
     BinaryTreeNode* pNode8 = CreateBinaryTreeNode(8);
@@ -160,7 +160,7 @@ void Test3()
 }
 
 // 测试空二叉树：根结点为空指针
-void Test4()
+void test4()
 {
     printf("=====Test4 starts:=====\n");
     BinaryTreeNode* pNode = nullptr;
@@ -177,7 +177,7 @@ void Test4()
 }
 
 // 测试只有一个结点的二叉树
-void Test5()
+void test5()
 {
     printf("=====Test5 starts:=====\n");
     BinaryTreeNode* pNode8 = CreateBinaryTreeNode(8);
@@ -195,11 +195,11 @@ void Test5()
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
 
     return 0;
 }

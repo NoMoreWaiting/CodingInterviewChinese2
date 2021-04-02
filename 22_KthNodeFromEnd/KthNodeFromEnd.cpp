@@ -19,7 +19,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 值为4的结点。
 
 #include <cstdio>
-#include "..\Utilities\List.h"
+#include "List.h"
 
 ListNode* FindKthToTail(ListNode* pListHead, unsigned int k)
 {
@@ -51,7 +51,7 @@ ListNode* FindKthToTail(ListNode* pListHead, unsigned int k)
 
 // ====================测试代码====================
 // 测试要找的结点在链表中间
-void Test1()
+void test1()
 {
     printf("=====Test1 starts:=====\n");
     ListNode* pNode1 = CreateListNode(1);
@@ -73,7 +73,7 @@ void Test1()
 }
 
 // 测试要找的结点是链表的尾结点
-void Test2()
+void test2()
 {
     printf("=====Test2 starts:=====\n");
     ListNode* pNode1 = CreateListNode(1);
@@ -95,7 +95,7 @@ void Test2()
 }
 
 // 测试要找的结点是链表的头结点
-void Test3()
+void test3()
 {
     printf("=====Test3 starts:=====\n");
     ListNode* pNode1 = CreateListNode(1);
@@ -117,7 +117,7 @@ void Test3()
 }
 
 // 测试空链表
-void Test4()
+void test4()
 {
     printf("=====Test4 starts:=====\n");
     printf("expected result: nullptr.\n");
@@ -126,7 +126,7 @@ void Test4()
 }
 
 // 测试输入的第二个参数大于链表的结点总数
-void Test5()
+void test5()
 {
     printf("=====Test5 starts:=====\n");
     ListNode* pNode1 = CreateListNode(1);
@@ -148,7 +148,7 @@ void Test5()
 }
 
 // 测试输入的第二个参数为0
-void Test6()
+void test6()
 {
     printf("=====Test6 starts:=====\n");
     ListNode* pNode1 = CreateListNode(1);
@@ -171,12 +171,12 @@ void Test6()
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
-    Test6();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
+    test6();
 
     return 0;
 }

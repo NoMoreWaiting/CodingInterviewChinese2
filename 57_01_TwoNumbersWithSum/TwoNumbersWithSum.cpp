@@ -49,7 +49,7 @@ bool FindNumbersWithSum(int data[], int length, int sum,
 }
 
 // ====================测试代码====================
-void Test(const char* testName, int data[], int length, int sum, bool expectedReturn)
+void test(const char* testName, int data[], int length, int sum, bool expectedReturn)
 {
     if(testName != nullptr)
         printf("%s begins: ", testName);
@@ -73,38 +73,38 @@ void Test(const char* testName, int data[], int length, int sum, bool expectedRe
 }
 
 // 存在和为s的两个数字，这两个数字位于数组的中间
-void Test1()
+void test1()
 {
     int data[] = {1, 2, 4, 7, 11, 15};
-    Test("Test1", data, sizeof(data) / sizeof(int), 15, true);
+    test((char *)"test1", data, sizeof(data) / sizeof(int), 15, true);
 }
 
 // 存在和为s的两个数字，这两个数字位于数组的两段
-void Test2()
+void test2()
 {
     int data[] = {1, 2, 4, 7, 11, 16};
-    Test("Test2", data, sizeof(data) / sizeof(int), 17, true);
+    test((char *)"test2", data, sizeof(data) / sizeof(int), 17, true);
 }
 
 // 不存在和为s的两个数字
-void Test3()
+void test3()
 {
     int data[] = {1, 2, 4, 7, 11, 16};
-    Test("Test3", data, sizeof(data) / sizeof(int), 10, false);
+    test((char *)"test3", data, sizeof(data) / sizeof(int), 10, false);
 }
 
 // 鲁棒性测试
-void Test4()
+void test4()
 {
-    Test("Test4", nullptr, 0, 0, false);
+    test((char *)"Test4", nullptr, 0, 0, false);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
+    test1();
+    test2();
+    test3();
+    test4();
 
     return 0;
 }

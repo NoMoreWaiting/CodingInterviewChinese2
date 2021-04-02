@@ -56,7 +56,7 @@ bool VerifySquenceOfBST(int sequence[], int length)
 }
 
 // ====================测试代码====================
-void Test(const char* testName, int sequence[], int length, bool expected)
+void test(const char* testName, int sequence[], int length, bool expected)
 {
     if(testName != nullptr)
         printf("%s begins: ", testName);
@@ -72,10 +72,10 @@ void Test(const char* testName, int sequence[], int length, bool expected)
 //        6        14
 //       /\        /\
 //      4  8     12  16
-void Test1()
+void test1()
 {
     int data[] = {4, 8, 6, 12, 16, 14, 10};
-    Test("Test1", data, sizeof(data)/sizeof(int), true);
+    test((char *)"test1", data, sizeof(data)/sizeof(int), true);
 }
 
 //           5
@@ -83,10 +83,10 @@ void Test1()
 //         4   7
 //            /
 //           6
-void Test2()
+void test2()
 {
     int data[] = {4, 6, 7, 5};
-    Test("Test2", data, sizeof(data)/sizeof(int), true);
+    test((char *)"test2", data, sizeof(data)/sizeof(int), true);
 }
 
 //               5
@@ -98,10 +98,10 @@ void Test2()
 //         2
 //        /
 //       1
-void Test3()
+void test3()
 {
     int data[] = {1, 2, 3, 4, 5};
-    Test("Test3", data, sizeof(data)/sizeof(int), true);
+    test((char *)"test3", data, sizeof(data)/sizeof(int), true);
 }
 
 // 1
@@ -113,46 +113,46 @@ void Test3()
 //       4
 //        \
 //         5
-void Test4()
+void test4()
 {
     int data[] = {5, 4, 3, 2, 1};
-    Test("Test4", data, sizeof(data)/sizeof(int), true);
+    test((char *)"Test4", data, sizeof(data)/sizeof(int), true);
 }
 
 // 树中只有1个结点
-void Test5()
+void test5()
 {
     int data[] = {5};
-    Test("Test5", data, sizeof(data)/sizeof(int), true);
+    test((char *)"Test5", data, sizeof(data)/sizeof(int), true);
 }
 
-void Test6()
+void test6()
 {
     int data[] = {7, 4, 6, 5};
-    Test("Test6", data, sizeof(data)/sizeof(int), false);
+    test((char *)"Test6", data, sizeof(data)/sizeof(int), false);
 }
 
-void Test7()
+void test7()
 {
     int data[] = {4, 6, 12, 8, 16, 14, 10};
-    Test("Test7", data, sizeof(data)/sizeof(int), false);
+    test((char *)"Test7", data, sizeof(data)/sizeof(int), false);
 }
 
-void Test8()
+void test8()
 {
-    Test("Test8", nullptr, 0, false);
+    test((char *)"Test8", nullptr, 0, false);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
-    Test6();
-    Test7();
-    Test8();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
+    test6();
+    test7();
+    test8();
 
     return 0;
 }

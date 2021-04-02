@@ -20,6 +20,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 #include "cstdio"
 #include <string>
 #include <algorithm>
+#include <cstring>
 
 int compare(const void* strNumber1, const void* strNumber2);
 
@@ -69,7 +70,7 @@ int compare(const void* strNumber1, const void* strNumber2)
 }
 
 // ====================测试代码====================
-void Test(const char* testName, int* numbers, int length, const char* expectedResult)
+void test(const char* testName, int* numbers, int length, const char* expectedResult)
 {
     if(testName != nullptr)
         printf("%s begins:\n", testName);
@@ -83,51 +84,51 @@ void Test(const char* testName, int* numbers, int length, const char* expectedRe
     printf("\n");
 }
 
-void Test1()
+void test1()
 {
     int numbers[] = {3, 5, 1, 4, 2};
-    Test("Test1", numbers, sizeof(numbers)/sizeof(int), "12345");
+    test((char *)"test1", numbers, sizeof(numbers)/sizeof(int), "12345");
 }
 
-void Test2()
+void test2()
 {
     int numbers[] = {3, 32, 321};
-    Test("Test2", numbers, sizeof(numbers)/sizeof(int), "321323");
+    test((char *)"test2", numbers, sizeof(numbers)/sizeof(int), "321323");
 }
 
-void Test3()
+void test3()
 {
     int numbers[] = {3, 323, 32123};
-    Test("Test3", numbers, sizeof(numbers)/sizeof(int), "321233233");
+    test((char *)"test3", numbers, sizeof(numbers)/sizeof(int), "321233233");
 }
 
-void Test4()
+void test4()
 {
     int numbers[] = {1, 11, 111};
-    Test("Test4", numbers, sizeof(numbers)/sizeof(int), "111111");
+    test((char *)"Test4", numbers, sizeof(numbers)/sizeof(int), "111111");
 }
 
 // 数组中只有一个数字
-void Test5()
+void test5()
 {
     int numbers[] = {321};
-    Test("Test5", numbers, sizeof(numbers)/sizeof(int), "321");
+    test((char *)"Test5", numbers, sizeof(numbers)/sizeof(int), "321");
 }
 
-void Test6()
+void test6()
 {
-    Test("Test6", nullptr, 0, "Don't print anything.");
+    test((char *)"Test6", nullptr, 0, "Don't print anything.");
 }
 
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
-    Test6();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
+    test6();
 
     return 0;
 }

@@ -67,7 +67,7 @@ public:
     {
         int size = min.size() + max.size();
         if(size == 0)
-            throw exception("No numbers are available");
+            throw logic_error("No numbers are available");
 
         T median = 0;
         if((size & 1) == 1)
@@ -84,7 +84,7 @@ private:
 };
 
 // ====================测试代码====================
-void Test(char* testName, DynamicArray<double>& numbers, double expected)
+void test(char* testName, DynamicArray<double>& numbers, double expected)
 {
     if(testName != nullptr)
         printf("%s begins: ", testName);
@@ -111,31 +111,31 @@ int main(int argc, char* argv[])
     }
 
     numbers.Insert(5);
-    Test("Test2", numbers, 5);
+    test((char *)"test2", numbers, 5);
 
     numbers.Insert(2);
-    Test("Test3", numbers, 3.5);
+    test((char *)"test3", numbers, 3.5);
 
     numbers.Insert(3);
-    Test("Test4", numbers, 3);
+    test((char *)"Test4", numbers, 3);
 
     numbers.Insert(4);
-    Test("Test6", numbers, 3.5);
+    test((char *)"Test6", numbers, 3.5);
 
     numbers.Insert(1);
-    Test("Test5", numbers, 3);
+    test((char *)"Test5", numbers, 3);
 
     numbers.Insert(6);
-    Test("Test7", numbers, 3.5);
+    test((char *)"Test7", numbers, 3.5);
 
     numbers.Insert(7);
-    Test("Test8", numbers, 4);
+    test((char *)"Test8", numbers, 4);
 
     numbers.Insert(0);
-    Test("Test9", numbers, 3.5);
+    test((char *)"Test9", numbers, 3.5);
 
     numbers.Insert(8);
-    Test("Test10", numbers, 4);
+    test((char *)"Test10", numbers, 4);
 
     return 0;
 }

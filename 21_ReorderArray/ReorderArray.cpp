@@ -99,7 +99,7 @@ void PrintArray(int numbers[], int length)
     printf("\n");
 }
 
-void Test(char* testName, int numbers[], int length)
+void test(char* testName, int numbers[], int length)
 {
     if(testName != nullptr)
         printf("%s begins:\n", testName);
@@ -110,12 +110,12 @@ void Test(char* testName, int numbers[], int length)
         copy[i] = numbers[i];
     }
 
-    printf("Test for solution 1:\n");
+    printf("test for solution 1:\n");
     PrintArray(numbers, length);
     ReorderOddEven_1(numbers, length);
     PrintArray(numbers, length);
 
-    printf("Test for solution 2:\n");
+    printf("test for solution 2:\n");
     PrintArray(copy, length);
     ReorderOddEven_2(copy, length);
     PrintArray(copy, length);
@@ -123,49 +123,49 @@ void Test(char* testName, int numbers[], int length)
     delete[] copy;
 }
 
-void Test1()
+void test1()
 {
     int numbers[] = {1, 2, 3, 4, 5, 6, 7};
-    Test("Test1", numbers, sizeof(numbers)/sizeof(int));
+    test((char *)"test1", numbers, sizeof(numbers)/sizeof(int));
 }
 
-void Test2()
+void test2()
 {
     int numbers[] = {2, 4, 6, 1, 3, 5, 7};
-    Test("Test2", numbers, sizeof(numbers)/sizeof(int));
+    test((char *)"test2", numbers, sizeof(numbers)/sizeof(int));
 }
 
-void Test3()
+void test3()
 {
     int numbers[] = {1, 3, 5, 7, 2, 4, 6};
-    Test("Test3", numbers, sizeof(numbers)/sizeof(int));
+    test((char *)"test3", numbers, sizeof(numbers)/sizeof(int));
 }
 
-void Test4()
+void test4()
 {
     int numbers[] = {1};
-    Test("Test4", numbers, sizeof(numbers)/sizeof(int));
+    test((char *)"Test4", numbers, sizeof(numbers)/sizeof(int));
 }
 
-void Test5()
+void test5()
 {
     int numbers[] = {2};
-    Test("Test5", numbers, sizeof(numbers)/sizeof(int));
+    test((char *)"Test5", numbers, sizeof(numbers)/sizeof(int));
 }
 
-void Test6()
+void test6()
 {
-    Test("Test6", nullptr, 0);
+    test((char *)"Test6", nullptr, 0);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
-    Test6();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
+    test6();
 
     return 0;
 }

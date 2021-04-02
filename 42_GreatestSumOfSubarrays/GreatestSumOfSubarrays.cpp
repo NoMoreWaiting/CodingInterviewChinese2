@@ -47,7 +47,7 @@ int FindGreatestSumOfSubArray(int *pData, int nLength)
 } 
 
 // ====================测试代码====================
-void Test(char* testName, int* pData, int nLength, int expected, bool expectedFlag)
+void test(char* testName, int* pData, int nLength, int expected, bool expectedFlag)
 {
     if(testName != nullptr)
         printf("%s begins: \n", testName);
@@ -60,40 +60,40 @@ void Test(char* testName, int* pData, int nLength, int expected, bool expectedFl
 }
 
 // 1, -2, 3, 10, -4, 7, 2, -5
-void Test1()
+void test1()
 {
     int data[] = {1, -2, 3, 10, -4, 7, 2, -5};
-    Test("Test1", data, sizeof(data) / sizeof(int), 18, false);
+    test((char *)"test1", data, sizeof(data) / sizeof(int), 18, false);
 }
 
 // 所有数字都是负数
 // -2, -8, -1, -5, -9
-void Test2()
+void test2()
 {
     int data[] = {-2, -8, -1, -5, -9};
-    Test("Test2", data, sizeof(data) / sizeof(int), -1, false);
+    test((char *)"test2", data, sizeof(data) / sizeof(int), -1, false);
 }
 
 // 所有数字都是正数
 // 2, 8, 1, 5, 9
-void Test3()
+void test3()
 {
     int data[] = {2, 8, 1, 5, 9};
-    Test("Test3", data, sizeof(data) / sizeof(int), 25, false);
+    test((char *)"test3", data, sizeof(data) / sizeof(int), 25, false);
 }
 
 // 无效输入
-void Test4()
+void test4()
 {
-    Test("Test4", nullptr, 0, 0, true);
+    test((char *)"Test4", nullptr, 0, 0, true);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
+    test1();
+    test2();
+    test3();
+    test4();
 
     return 0;
 }

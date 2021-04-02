@@ -19,6 +19,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 
 #include <iostream>
 #include <algorithm>
+#include <cmath>
 
 using namespace std;
 
@@ -83,14 +84,14 @@ void test(const char* testName, int inputIndex, int expectedOutput)
 
 int main()
 {
-	test("Test1", 0, 0);
-	test("Test2", 1, 1);
-	test("Test3", 9, 9);
-	test("Test4", 10, 1);
-	test("Test5", 189, 9);  // 数字99的最后一位，9
-	test("Test6", 190, 1);  // 数字100的第一位，1
-	test("Test7", 1000, 3); // 数字370的第一位，3
-	test("Test8", 1001, 7); // 数字370的第二位，7
-	test("Test9", 1002, 0); // 数字370的第三位，0
+	test((char *)"test1", 0, 0);
+	test((char *)"test2", 1, 1);
+	test((char *)"test3", 9, 9);
+	test((char *)"test4", 10, 1);
+	test((char *)"test5", 189, 9);  // 数字99的最后一位，9
+	test((char *)"test6", 190, 1);  // 数字100的第一位，1
+	test((char *)"test7", 1000, 3); // 数字370的第一位，3
+	test((char *)"test8", 1001, 7); // 数字370的第二位，7
+	test((char *)"test9", 1002, 0); // 数字370的第三位，0
 	return 0;
 }

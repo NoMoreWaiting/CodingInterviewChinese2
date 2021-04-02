@@ -26,6 +26,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 #include <cstdio>
 #include <string>
 #include <stack>
+#include <cstring>
 
 using namespace std;
 
@@ -91,7 +92,7 @@ bool hasPathCore(const char* matrix, int rows, int cols, int row,
 }
 
 // ====================测试代码====================
-void Test(const char* testName, const char* matrix, int rows, int cols, const char* str, bool expected)
+void test(const char* testName, const char* matrix, int rows, int cols, const char* str, bool expected)
 {
     if(testName != nullptr)
         printf("%s begins: ", testName);
@@ -107,12 +108,12 @@ void Test(const char* testName, const char* matrix, int rows, int cols, const ch
 //JDEH
 
 //BFCE
-void Test1()
+void test1()
 {
     const char* matrix = "ABTGCFCSJDEH";
     const char* str = "BFCE";
 
-    Test("Test1", (const char*) matrix, 3, 4, str, true);
+    test((char *)"test1", (const char*) matrix, 3, 4, str, true);
 }
 
 //ABCE
@@ -120,12 +121,12 @@ void Test1()
 //ADEE
 
 //SEE
-void Test2()
+void test2()
 {
     const char* matrix = "ABCESFCSADEE";
     const char* str = "SEE";
 
-    Test("Test2", (const char*) matrix, 3, 4, str, true);
+    test((char *)"test2", (const char*) matrix, 3, 4, str, true);
 }
 
 //ABTG
@@ -133,12 +134,12 @@ void Test2()
 //JDEH
 
 //ABFB
-void Test3()
+void test3()
 {
     const char* matrix = "ABTGCFCSJDEH";
     const char* str = "ABFB";
 
-    Test("Test3", (const char*) matrix, 3, 4, str, false);
+    test((char *)"Test3", (const char*) matrix, 3, 4, str, false);
 }
 
 //ABCEHJIG
@@ -148,12 +149,12 @@ void Test3()
 //VCEIFGGS
 
 //SLHECCEIDEJFGGFIE
-void Test4()
+void test4()
 {
     const char* matrix = "ABCEHJIGSFCSLOPQADEEMNOEADIDEJFMVCEIFGGS";
     const char* str = "SLHECCEIDEJFGGFIE";
 
-    Test("Test4", (const char*) matrix, 5, 8, str, true);
+    test((char *)"Test4", (const char*) matrix, 5, 8, str, true);
 }
 
 //ABCEHJIG
@@ -163,12 +164,12 @@ void Test4()
 //VCEIFGGS
 
 //SGGFIECVAASABCEHJIGQEM
-void Test5()
+void test5()
 {
     const char* matrix = "ABCEHJIGSFCSLOPQADEEMNOEADIDEJFMVCEIFGGS";
     const char* str = "SGGFIECVAASABCEHJIGQEM";
 
-    Test("Test5", (const char*) matrix, 5, 8, str, true);
+    test((char *)"Test5", (const char*) matrix, 5, 8, str, true);
 }
 
 //ABCEHJIG
@@ -178,12 +179,12 @@ void Test5()
 //VCEIFGGS
 
 //SGGFIECVAASABCEEJIGOEM
-void Test6()
+void test6()
 {
     const char* matrix = "ABCEHJIGSFCSLOPQADEEMNOEADIDEJFMVCEIFGGS";
     const char* str = "SGGFIECVAASABCEEJIGOEM";
 
-    Test("Test6", (const char*) matrix, 5, 8, str, false);
+    test((char *)"Test6", (const char*) matrix, 5, 8, str, false);
 }
 
 //ABCEHJIG
@@ -193,12 +194,12 @@ void Test6()
 //VCEIFGGS
 
 //SGGFIECVAASABCEHJIGQEMS
-void Test7()
+void test7()
 {
     const char* matrix = "ABCEHJIGSFCSLOPQADEEMNOEADIDEJFMVCEIFGGS";
     const char* str = "SGGFIECVAASABCEHJIGQEMS";
 
-    Test("Test7", (const char*) matrix, 5, 8, str, false);
+    test((char *)"Test7", (const char*) matrix, 5, 8, str, false);
 }
 
 //AAAA
@@ -206,12 +207,12 @@ void Test7()
 //AAAA
 
 //AAAAAAAAAAAA
-void Test8()
+void test8()
 {
     const char* matrix = "AAAAAAAAAAAA";
     const char* str = "AAAAAAAAAAAA";
 
-    Test("Test8", (const char*) matrix, 3, 4, str, true);
+    test((char *)"Test8", (const char*) matrix, 3, 4, str, true);
 }
 
 //AAAA
@@ -219,55 +220,55 @@ void Test8()
 //AAAA
 
 //AAAAAAAAAAAAA
-void Test9()
+void test9()
 {
     const char* matrix = "AAAAAAAAAAAA";
     const char* str = "AAAAAAAAAAAAA";
 
-    Test("Test9", (const char*) matrix, 3, 4, str, false);
+    test((char *)"Test9", (const char*) matrix, 3, 4, str, false);
 }
 
 //A
 
 //A
-void Test10()
+void test10()
 {
     const char* matrix = "A";
     const char* str = "A";
 
-    Test("Test10", (const char*) matrix, 1, 1, str, true);
+    test((char *)"Test10", (const char*) matrix, 1, 1, str, true);
 }
 
 //A
 
 //B
-void Test11()
+void test11()
 {
     const char* matrix = "A";
     const char* str = "B";
 
-    Test("Test11", (const char*) matrix, 1, 1, str, false);
+    test((char *)"Test11", (const char*) matrix, 1, 1, str, false);
 }
 
-void Test12()
+void test12()
 {
-    Test("Test12", nullptr, 0, 0, nullptr, false);
+    test((char *)"Test12", nullptr, 0, 0, nullptr, false);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
-    Test6();
-    Test7();
-    Test8();
-    Test9();
-    Test10();
-    Test11();
-    Test12();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
+    test6();
+    test7();
+    test8();
+    test9();
+    test10();
+    test11();
+    test12();
 
     return 0;
 }

@@ -59,7 +59,7 @@ bool matchCore(const char* str, const char* pattern)
 }
 
 // ====================测试代码====================
-void Test(const char* testName, const char* string, const char* pattern, bool expected)
+void test(const char* testName, const char* string, const char* pattern, bool expected)
 {
     if(testName != nullptr)
         printf("%s begins: ", testName);
@@ -72,36 +72,36 @@ void Test(const char* testName, const char* string, const char* pattern, bool ex
 
 int main(int argc, char* argv[])
 {
-    Test("Test01", "", "", true);
-    Test("Test02", "", ".*", true);
-    Test("Test03", "", ".", false);
-    Test("Test04", "", "c*", true);
-    Test("Test05", "a", ".*", true);
-    Test("Test06", "a", "a.", false);
-    Test("Test07", "a", "", false);
-    Test("Test08", "a", ".", true);
-    Test("Test09", "a", "ab*", true);
-    Test("Test10", "a", "ab*a", false);
-    Test("Test11", "aa", "aa", true);
-    Test("Test12", "aa", "a*", true);
-    Test("Test13", "aa", ".*", true);
-    Test("Test14", "aa", ".", false);
-    Test("Test15", "ab", ".*", true);
-    Test("Test16", "ab", ".*", true);
-    Test("Test17", "aaa", "aa*", true);
-    Test("Test18", "aaa", "aa.a", false);
-    Test("Test19", "aaa", "a.a", true);
-    Test("Test20", "aaa", ".a", false);
-    Test("Test21", "aaa", "a*a", true);
-    Test("Test22", "aaa", "ab*a", false);
-    Test("Test23", "aaa", "ab*ac*a", true);
-    Test("Test24", "aaa", "ab*a*c*a", true);
-    Test("Test25", "aaa", ".*", true);
-    Test("Test26", "aab", "c*a*b", true);
-    Test("Test27", "aaca", "ab*a*c*a", true);
-    Test("Test28", "aaba", "ab*a*c*a", false);
-    Test("Test29", "bbbba", ".*a*a", true);
-    Test("Test30", "bcbbabab", ".*a*a", false);
+    test("Test01", "", "", true);
+    test("Test02", "", ".*", true);
+    test("Test03", "", ".", false);
+    test("Test04", "", "c*", true);
+    test("Test05", "a", ".*", true);
+    test("Test06", "a", "a.", false);
+    test("Test07", "a", "", false);
+    test("Test08", "a", ".", true);
+    test("Test09", "a", "ab*", true);
+    test("Test10", "a", "ab*a", false);
+    test("Test11", "aa", "aa", true);
+    test("Test12", "aa", "a*", true);
+    test("Test13", "aa", ".*", true);
+    test("Test14", "aa", ".", false);
+    test("Test15", "ab", ".*", true);
+    test("Test16", "ab", ".*", true);
+    test("Test17", "aaa", "aa*", true);
+    test("Test18", "aaa", "aa.a", false);
+    test("Test19", "aaa", "a.a", true);
+    test("Test20", "aaa", ".a", false);
+    test("Test21", "aaa", "a*a", true);
+    test("Test22", "aaa", "ab*a", false);
+    test("Test23", "aaa", "ab*ac*a", true);
+    test("Test24", "aaa", "ab*a*c*a", true);
+    test("Test25", "aaa", ".*", true);
+    test("Test26", "aab", "c*a*b", true);
+    test("Test27", "aaca", "ab*a*c*a", true);
+    test("Test28", "aaba", "ab*a*c*a", false);
+    test("Test29", "bbbba", ".*a*a", true);
+    test("Test30", "bcbbabab", ".*a*a", false);
 
     return 0;
 }

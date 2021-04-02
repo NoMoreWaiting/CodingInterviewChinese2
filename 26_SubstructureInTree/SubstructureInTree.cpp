@@ -103,7 +103,7 @@ void DestroyTree(BinaryTreeNode* pRoot)
 }
 
 // ====================测试代码====================
-void Test(char* testName, BinaryTreeNode* pRoot1, BinaryTreeNode* pRoot2, bool expected)
+void test(char* testName, BinaryTreeNode* pRoot1, BinaryTreeNode* pRoot2, bool expected)
 {
     if(HasSubtree(pRoot1, pRoot2) == expected)
         printf("%s passed.\n", testName);
@@ -119,7 +119,7 @@ void Test(char* testName, BinaryTreeNode* pRoot1, BinaryTreeNode* pRoot2, bool e
 //          9     2
 //               / \
 //              4   7
-void Test1()
+void test1()
 {
     BinaryTreeNode* pNodeA1 = CreateBinaryTreeNode(8);
     BinaryTreeNode* pNodeA2 = CreateBinaryTreeNode(8);
@@ -139,7 +139,7 @@ void Test1()
 
     ConnectTreeNodes(pNodeB1, pNodeB2, pNodeB3);
 
-    Test("Test1", pNodeA1, pNodeB1, true);
+    test((char *)"test1", pNodeA1, pNodeB1, true);
 
     DestroyTree(pNodeA1);
     DestroyTree(pNodeB1);
@@ -153,7 +153,7 @@ void Test1()
 //          9     3
 //               / \
 //              4   7
-void Test2()
+void test2()
 {
     BinaryTreeNode* pNodeA1 = CreateBinaryTreeNode(8);
     BinaryTreeNode* pNodeA2 = CreateBinaryTreeNode(8);
@@ -173,7 +173,7 @@ void Test2()
 
     ConnectTreeNodes(pNodeB1, pNodeB2, pNodeB3);
 
-    Test("Test2", pNodeA1, pNodeB1, false);
+    test((char *)"test2", pNodeA1, pNodeB1, false);
 
     DestroyTree(pNodeA1);
     DestroyTree(pNodeB1);
@@ -189,7 +189,7 @@ void Test2()
 //        2        
 //       /
 //      5
-void Test3()
+void test3()
 {
     BinaryTreeNode* pNodeA1 = CreateBinaryTreeNode(8);
     BinaryTreeNode* pNodeA2 = CreateBinaryTreeNode(8);
@@ -209,7 +209,7 @@ void Test3()
     ConnectTreeNodes(pNodeB1, pNodeB2, nullptr);
     ConnectTreeNodes(pNodeB2, pNodeB3, nullptr);
 
-    Test("Test3", pNodeA1, pNodeB1, true);
+    test((char *)"test3", pNodeA1, pNodeB1, true);
 
     DestroyTree(pNodeA1);
     DestroyTree(pNodeB1);
@@ -225,7 +225,7 @@ void Test3()
 //        2        
 //       /
 //      5
-void Test4()
+void test4()
 {
     BinaryTreeNode* pNodeA1 = CreateBinaryTreeNode(8);
     BinaryTreeNode* pNodeA2 = CreateBinaryTreeNode(8);
@@ -245,7 +245,7 @@ void Test4()
     ConnectTreeNodes(pNodeB1, pNodeB2, nullptr);
     ConnectTreeNodes(pNodeB2, pNodeB3, nullptr);
 
-    Test("Test4", pNodeA1, pNodeB1, false);
+    test((char *)"Test4", pNodeA1, pNodeB1, false);
 
     DestroyTree(pNodeA1);
     DestroyTree(pNodeB1);
@@ -261,7 +261,7 @@ void Test4()
 //             2        
 //              \
 //               5
-void Test5()
+void test5()
 {
     BinaryTreeNode* pNodeA1 = CreateBinaryTreeNode(8);
     BinaryTreeNode* pNodeA2 = CreateBinaryTreeNode(8);
@@ -281,7 +281,7 @@ void Test5()
     ConnectTreeNodes(pNodeB1, nullptr, pNodeB2);
     ConnectTreeNodes(pNodeB2, nullptr, pNodeB3);
 
-    Test("Test5", pNodeA1, pNodeB1, true);
+    test((char *)"Test5", pNodeA1, pNodeB1, true);
 
     DestroyTree(pNodeA1);
     DestroyTree(pNodeB1);
@@ -297,7 +297,7 @@ void Test5()
 //             2        
 //              \
 //               5
-void Test6()
+void test6()
 {
     BinaryTreeNode* pNodeA1 = CreateBinaryTreeNode(8);
     BinaryTreeNode* pNodeA2 = CreateBinaryTreeNode(8);
@@ -318,14 +318,14 @@ void Test6()
     ConnectTreeNodes(pNodeB1, nullptr, pNodeB2);
     ConnectTreeNodes(pNodeB2, pNodeB3, pNodeB4);
 
-    Test("Test6", pNodeA1, pNodeB1, false);
+    test((char *)"Test6", pNodeA1, pNodeB1, false);
 
     DestroyTree(pNodeA1);
     DestroyTree(pNodeB1);
 }
 
 // 树A为空树
-void Test7()
+void test7()
 {
     BinaryTreeNode* pNodeB1 = CreateBinaryTreeNode(8);
     BinaryTreeNode* pNodeB2 = CreateBinaryTreeNode(9);
@@ -335,13 +335,13 @@ void Test7()
     ConnectTreeNodes(pNodeB1, nullptr, pNodeB2);
     ConnectTreeNodes(pNodeB2, pNodeB3, pNodeB4);
 
-    Test("Test7", nullptr, pNodeB1, false);
+    test((char *)"Test7", nullptr, pNodeB1, false);
 
     DestroyTree(pNodeB1);
 }
 
 // 树B为空树
-void Test8()
+void test8()
 {
     BinaryTreeNode* pNodeA1 = CreateBinaryTreeNode(8);
     BinaryTreeNode* pNodeA2 = CreateBinaryTreeNode(9);
@@ -351,28 +351,28 @@ void Test8()
     ConnectTreeNodes(pNodeA1, nullptr, pNodeA2);
     ConnectTreeNodes(pNodeA2, pNodeA3, pNodeA4);
 
-    Test("Test8", pNodeA1, nullptr, false);
+    test((char *)"Test8", pNodeA1, nullptr, false);
 
     DestroyTree(pNodeA1);
 }
 
 // 树A和树B都为空
-void Test9()
+void test9()
 {
-    Test("Test9", nullptr, nullptr, false);
+    test((char *)"Test9", nullptr, nullptr, false);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
-    Test6();
-    Test7();
-    Test8();
-    Test9();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
+    test6();
+    test7();
+    test8();
+    test9();
 
     return 0;
 }

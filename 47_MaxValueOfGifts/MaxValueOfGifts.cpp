@@ -109,7 +109,7 @@ void test1()
         { 7, 8, 9 }
     };
     int expected = 29;
-    test("test1", (const int*) values, 3, 3, expected);
+    test((char *)"test1", (const int*) values, 3, 3, expected);
 }
 
 void test2()
@@ -122,7 +122,7 @@ void test2()
         { 3, 7, 16, 5 }
     };
     int expected = 53;
-    test("test2", (const int*) values, 4, 4, expected);
+    test((char *)"test2", (const int*) values, 4, 4, expected);
 }
 
 void test3()
@@ -132,7 +132,7 @@ void test3()
         { 1, 10, 3, 8 }
     };
     int expected = 22;
-    test("test3", (const int*) values, 1, 4, expected);
+    test((char *)"test3", (const int*) values, 1, 4, expected);
 }
 
 void test4()

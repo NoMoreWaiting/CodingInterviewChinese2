@@ -17,7 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 任意结点的左右子树的深度相差不超过1，那么它就是一棵平衡二叉树。
 
 #include <cstdio>
-#include "..\Utilities\BinaryTree.h"
+#include "BinaryTree.h"
 
 // ====================方法1====================
 int TreeDepth(const BinaryTreeNode* pRoot)
@@ -79,7 +79,7 @@ bool IsBalanced(const BinaryTreeNode* pRoot, int* pDepth)
 }
 
 // ====================测试代码====================
-void Test(const char* testName, const BinaryTreeNode* pRoot, bool expected)
+void test(const char* testName, const BinaryTreeNode* pRoot, bool expected)
 {
     if(testName != nullptr)
         printf("%s begins:\n", testName);
@@ -103,7 +103,7 @@ void Test(const char* testName, const BinaryTreeNode* pRoot, bool expected)
 //        2        3
 //       /\       / \
 //      4  5     6   7
-void Test1()
+void test1()
 {
     BinaryTreeNode* pNode1 = CreateBinaryTreeNode(1);
     BinaryTreeNode* pNode2 = CreateBinaryTreeNode(2);
@@ -117,7 +117,7 @@ void Test1()
     ConnectTreeNodes(pNode2, pNode4, pNode5);
     ConnectTreeNodes(pNode3, pNode6, pNode7);
 
-    Test("Test1", pNode1, true);
+    test((char *)"test1", pNode1, true);
 
     DestroyTree(pNode1);
 }
@@ -130,7 +130,7 @@ void Test1()
 //      4  5         6
 //        /
 //       7
-void Test2()
+void test2()
 {
     BinaryTreeNode* pNode1 = CreateBinaryTreeNode(1);
     BinaryTreeNode* pNode2 = CreateBinaryTreeNode(2);
@@ -145,7 +145,7 @@ void Test2()
     ConnectTreeNodes(pNode3, nullptr, pNode6);
     ConnectTreeNodes(pNode5, pNode7, nullptr);
 
-    Test("Test2", pNode1, true);
+    test((char *)"test2", pNode1, true);
 
     DestroyTree(pNode1);
 }
@@ -158,7 +158,7 @@ void Test2()
 //      4  5        
 //        /
 //       6
-void Test3()
+void test3()
 {
     BinaryTreeNode* pNode1 = CreateBinaryTreeNode(1);
     BinaryTreeNode* pNode2 = CreateBinaryTreeNode(2);
@@ -171,7 +171,7 @@ void Test3()
     ConnectTreeNodes(pNode2, pNode4, pNode5);
     ConnectTreeNodes(pNode5, pNode6, nullptr);
 
-    Test("Test3", pNode1, false);
+    test((char *)"test3", pNode1, false);
 
     DestroyTree(pNode1);
 }
@@ -186,7 +186,7 @@ void Test3()
 //         4
 //        /
 //       5
-void Test4()
+void test4()
 {
     BinaryTreeNode* pNode1 = CreateBinaryTreeNode(1);
     BinaryTreeNode* pNode2 = CreateBinaryTreeNode(2);
@@ -199,7 +199,7 @@ void Test4()
     ConnectTreeNodes(pNode3, pNode4, nullptr);
     ConnectTreeNodes(pNode4, pNode5, nullptr);
 
-    Test("Test4", pNode1, false);
+    test((char *)"Test4", pNode1, false);
 
     DestroyTree(pNode1);
 }
@@ -213,7 +213,7 @@ void Test4()
 //       4
 //        \
 //         5
-void Test5()
+void test5()
 {
     BinaryTreeNode* pNode1 = CreateBinaryTreeNode(1);
     BinaryTreeNode* pNode2 = CreateBinaryTreeNode(2);
@@ -226,35 +226,35 @@ void Test5()
     ConnectTreeNodes(pNode3, nullptr, pNode4);
     ConnectTreeNodes(pNode4, nullptr, pNode5);
 
-    Test("Test5", pNode1, false);
+    test((char *)"Test5", pNode1, false);
 
     DestroyTree(pNode1);
 }
 
 // 树中只有1个结点
-void Test6()
+void test6()
 {
     BinaryTreeNode* pNode1 = CreateBinaryTreeNode(1);
-    Test("Test6", pNode1, true);
+    test((char *)"Test6", pNode1, true);
 
     DestroyTree(pNode1);
 }
 
 // 树中没有结点
-void Test7()
+void test7()
 {
-    Test("Test7", nullptr, true);
+    test((char *)"Test7", nullptr, true);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
-    Test6();
-    Test7();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
+    test6();
+    test7();
 
     return 0;
 }

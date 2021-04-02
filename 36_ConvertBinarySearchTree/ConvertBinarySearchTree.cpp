@@ -17,7 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 不能创建任何新的结点，只能调整树中结点指针的指向。
 
 #include <cstdio>
-#include "..\Utilities\BinaryTree.h"
+#include "BinaryTree.h"
 
 void ConvertNode(BinaryTreeNode* pNode, BinaryTreeNode** pLastNodeInList);
 
@@ -95,7 +95,7 @@ void DestroyList(BinaryTreeNode* pHeadOfList)
     }
 }
 
-void Test(char* testName, BinaryTreeNode* pRootOfTree)
+void test(char* testName, BinaryTreeNode* pRootOfTree)
 {
     if(testName != nullptr)
         printf("%s begins:\n", testName);
@@ -112,7 +112,7 @@ void Test(char* testName, BinaryTreeNode* pRootOfTree)
 //        6        14
 //       /\        /\
 //      4  8     12  16
-void Test1()
+void test1()
 {
     BinaryTreeNode* pNode10 = CreateBinaryTreeNode(10);
     BinaryTreeNode* pNode6 = CreateBinaryTreeNode(6);
@@ -126,7 +126,7 @@ void Test1()
     ConnectTreeNodes(pNode6, pNode4, pNode8);
     ConnectTreeNodes(pNode14, pNode12, pNode16);
 
-    Test("Test1", pNode10);
+    test((char *)"test1", pNode10);
 
     DestroyList(pNode4);
 }
@@ -140,7 +140,7 @@ void Test1()
 //         2
 //        /
 //       1
-void Test2()
+void test2()
 {
     BinaryTreeNode* pNode5 = CreateBinaryTreeNode(5);
     BinaryTreeNode* pNode4 = CreateBinaryTreeNode(4);
@@ -153,7 +153,7 @@ void Test2()
     ConnectTreeNodes(pNode3, pNode2, nullptr);
     ConnectTreeNodes(pNode2, pNode1, nullptr);
 
-    Test("Test2", pNode5);
+    test((char *)"test2", pNode5);
 
     DestroyList(pNode1);
 }
@@ -167,7 +167,7 @@ void Test2()
 //       4
 //        \
 //         5
-void Test3()
+void test3()
 {
     BinaryTreeNode* pNode1 = CreateBinaryTreeNode(1);
     BinaryTreeNode* pNode2 = CreateBinaryTreeNode(2);
@@ -180,33 +180,33 @@ void Test3()
     ConnectTreeNodes(pNode3, nullptr, pNode4);
     ConnectTreeNodes(pNode4, nullptr, pNode5);
 
-    Test("Test3", pNode1);
+    test((char *)"test3", pNode1);
 
     DestroyList(pNode1);
 }
 
 // 树中只有1个结点
-void Test4()
+void test4()
 {
     BinaryTreeNode* pNode1 = CreateBinaryTreeNode(1);
-    Test("Test4", pNode1);
+    test((char *)"Test4", pNode1);
 
     DestroyList(pNode1);
 }
 
 // 树中没有结点
-void Test5()
+void test5()
 {
-    Test("Test5", nullptr);
+    test((char *)"Test5", nullptr);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
 
     return 0;
 }

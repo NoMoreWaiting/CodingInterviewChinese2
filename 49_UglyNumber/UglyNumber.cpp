@@ -95,7 +95,7 @@ int Min(int number1, int number2, int number3)
 }
 
 // ====================测试代码====================
-void Test(int index, int expected)
+void test(int index, int expected)
 {
     if(GetUglyNumber_Solution1(index) == expected)
         printf("solution1 passed\n");
@@ -110,22 +110,22 @@ void Test(int index, int expected)
 
 int main(int argc, char* argv[])
 {
-    Test(1, 1);
+    test(1, 1);
 
-    Test(2, 2);
-    Test(3, 3);
-    Test(4, 4);
-    Test(5, 5);
-    Test(6, 6);
-    Test(7, 8);
-    Test(8, 9);
-    Test(9, 10);
-    Test(10, 12);
-    Test(11, 15);
+    test(2, 2);
+    test(3, 3);
+    test(4, 4);
+    test(5, 5);
+    test(6, 6);
+    test(7, 8);
+    test(8, 9);
+    test(9, 10);
+    test(10, 12);
+    test(11, 15);
 
-    Test(1500, 859963392);
+    test(1500, 859963392);
 
-    Test(0, 0);
+    test(0, 0);
 
     return 0;
 }

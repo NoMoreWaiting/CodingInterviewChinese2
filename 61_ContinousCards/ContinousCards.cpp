@@ -58,7 +58,7 @@ int Compare(const void *arg1, const void *arg2)
 }
 
 // ====================测试代码====================
-void Test(const char* testName, int* numbers, int length, bool expected)
+void test(const char* testName, int* numbers, int length, bool expected)
 {
     if(testName != nullptr)
         printf("%s begins: ", testName);
@@ -69,93 +69,93 @@ void Test(const char* testName, int* numbers, int length, bool expected)
         printf("Failed.\n");
 }
 
-void Test1()
+void test1()
 {
     int numbers[] = { 1, 3, 2, 5, 4 };
-    Test("Test1", numbers, sizeof(numbers) / sizeof(int), true);
+    test((char *)"test1", numbers, sizeof(numbers) / sizeof(int), true);
 }
 
-void Test2()
+void test2()
 {
     int numbers[] = { 1, 3, 2, 6, 4 };
-    Test("Test2", numbers, sizeof(numbers) / sizeof(int), false);
+    test((char *)"test2", numbers, sizeof(numbers) / sizeof(int), false);
 }
 
-void Test3()
+void test3()
 {
     int numbers[] = { 0, 3, 2, 6, 4 };
-    Test("Test3", numbers, sizeof(numbers) / sizeof(int), true);
+    test((char *)"test3", numbers, sizeof(numbers) / sizeof(int), true);
 }
 
-void Test4()
+void test4()
 {
     int numbers[] = { 0, 3, 1, 6, 4 };
-    Test("Test4", numbers, sizeof(numbers) / sizeof(int), false);
+    test((char *)"Test4", numbers, sizeof(numbers) / sizeof(int), false);
 }
 
-void Test5()
+void test5()
 {
     int numbers[] = { 1, 3, 0, 5, 0 };
-    Test("Test5", numbers, sizeof(numbers) / sizeof(int), true);
+    test((char *)"Test5", numbers, sizeof(numbers) / sizeof(int), true);
 }
 
-void Test6()
+void test6()
 {
     int numbers[] = { 1, 3, 0, 7, 0 };
-    Test("Test6", numbers, sizeof(numbers) / sizeof(int), false);
+    test((char *)"Test6", numbers, sizeof(numbers) / sizeof(int), false);
 }
 
-void Test7()
+void test7()
 {
     int numbers[] = { 1, 0, 0, 5, 0 };
-    Test("Test7", numbers, sizeof(numbers) / sizeof(int), true);
+    test((char *)"Test7", numbers, sizeof(numbers) / sizeof(int), true);
 }
 
-void Test8()
+void test8()
 {
     int numbers[] = { 1, 0, 0, 7, 0 };
-    Test("Test8", numbers, sizeof(numbers) / sizeof(int), false);
+    test((char *)"Test8", numbers, sizeof(numbers) / sizeof(int), false);
 }
 
-void Test9()
+void test9()
 {
     int numbers[] = { 3, 0, 0, 0, 0 };
-    Test("Test9", numbers, sizeof(numbers) / sizeof(int), true);
+    test((char *)"Test9", numbers, sizeof(numbers) / sizeof(int), true);
 }
 
-void Test10()
+void test10()
 {
     int numbers[] = { 0, 0, 0, 0, 0 };
-    Test("Test10", numbers, sizeof(numbers) / sizeof(int), true);
+    test((char *)"Test10", numbers, sizeof(numbers) / sizeof(int), true);
 }
 
 // 有对子
-void Test11()
+void test11()
 {
     int numbers[] = { 1, 0, 0, 1, 0 };
-    Test("Test11", numbers, sizeof(numbers) / sizeof(int), false);
+    test((char *)"Test11", numbers, sizeof(numbers) / sizeof(int), false);
 }
 
 // 鲁棒性测试
-void Test12()
+void test12()
 {
-    Test("Test12", nullptr, 0, false);
+    test((char *)"Test12", nullptr, 0, false);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
-    Test6();
-    Test7();
-    Test8();
-    Test9();
-    Test10();
-    Test11();
-    Test12();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
+    test6();
+    test7();
+    test8();
+    test9();
+    test10();
+    test11();
+    test12();
 
     return 0;
 }

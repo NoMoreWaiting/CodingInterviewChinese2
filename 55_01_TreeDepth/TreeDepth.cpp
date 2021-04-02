@@ -17,7 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 结点（含根、叶结点）形成树的一条路径，最长路径的长度为树的深度。
 
 #include <cstdio>
-#include "..\Utilities\BinaryTree.h"
+#include "BinaryTree.h"
 
 int TreeDepth(const BinaryTreeNode* pRoot)
 {
@@ -31,7 +31,7 @@ int TreeDepth(const BinaryTreeNode* pRoot)
 }
 
 // ====================测试代码====================
-void Test(const char* testName, const BinaryTreeNode* pRoot, int expected)
+void test(const char* testName, const BinaryTreeNode* pRoot, int expected)
 {
     int result = TreeDepth(pRoot);
     if(expected == result)
@@ -47,7 +47,7 @@ void Test(const char* testName, const BinaryTreeNode* pRoot, int expected)
 //      4  5         6
 //        /
 //       7
-void Test1()
+void test1()
 {
     BinaryTreeNode* pNode1 = CreateBinaryTreeNode(1);
     BinaryTreeNode* pNode2 = CreateBinaryTreeNode(2);
@@ -62,7 +62,7 @@ void Test1()
     ConnectTreeNodes(pNode3, nullptr, pNode6);
     ConnectTreeNodes(pNode5, pNode7, nullptr);
 
-    Test("Test1", pNode1, 4);
+    test((char *)"test1", pNode1, 4);
 
     DestroyTree(pNode1);
 }
@@ -76,7 +76,7 @@ void Test1()
 //         4
 //        /
 //       5
-void Test2()
+void test2()
 {
     BinaryTreeNode* pNode1 = CreateBinaryTreeNode(1);
     BinaryTreeNode* pNode2 = CreateBinaryTreeNode(2);
@@ -89,7 +89,7 @@ void Test2()
     ConnectTreeNodes(pNode3, pNode4, nullptr);
     ConnectTreeNodes(pNode4, pNode5, nullptr);
 
-    Test("Test2", pNode1, 5);
+    test((char *)"test2", pNode1, 5);
 
     DestroyTree(pNode1);
 }
@@ -103,7 +103,7 @@ void Test2()
 //       4
 //        \
 //         5
-void Test3()
+void test3()
 {
     BinaryTreeNode* pNode1 = CreateBinaryTreeNode(1);
     BinaryTreeNode* pNode2 = CreateBinaryTreeNode(2);
@@ -116,33 +116,33 @@ void Test3()
     ConnectTreeNodes(pNode3, nullptr, pNode4);
     ConnectTreeNodes(pNode4, nullptr, pNode5);
 
-    Test("Test3", pNode1, 5);
+    test((char *)"test3", pNode1, 5);
 
     DestroyTree(pNode1);
 }
 
 // 树中只有1个结点
-void Test4()
+void test4()
 {
     BinaryTreeNode* pNode1 = CreateBinaryTreeNode(1);
-    Test("Test4", pNode1, 1);
+    test((char *)"Test4", pNode1, 1);
 
     DestroyTree(pNode1);
 }
 
 // 树中没有结点
-void Test5()
+void test5()
 {
-    Test("Test5", nullptr, 0);
+    test((char *)"Test5", nullptr, 0);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
 
     return 0;
 }

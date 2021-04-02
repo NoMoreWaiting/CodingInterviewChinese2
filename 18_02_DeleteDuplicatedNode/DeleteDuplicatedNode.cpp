@@ -17,7 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 结点被删除之后，链表如图3.4（b）所示。
 
 #include <cstdio>
-#include "../Utilities/list.h"
+#include "List.h"
 
 void DeleteDuplication(ListNode** pHead)
 {
@@ -62,7 +62,7 @@ void DeleteDuplication(ListNode** pHead)
 }
 
 // ====================测试代码====================
-void Test(char* testName, ListNode** pHead, int* expectedValues, int expectedLength)
+void test(char* testName, ListNode** pHead, int* expectedValues, int expectedLength)
 {
     if(testName != nullptr)
         printf("%s begins: ", testName);
@@ -87,7 +87,7 @@ void Test(char* testName, ListNode** pHead, int* expectedValues, int expectedLen
 }
 
 // 某些结点是重复的
-void Test1()
+void test1()
 {
     ListNode* pNode1 = CreateListNode(1);
     ListNode* pNode2 = CreateListNode(2);
@@ -107,13 +107,13 @@ void Test1()
     ListNode* pHead = pNode1;
 
     int expectedValues[] = { 1, 2, 5 };
-    Test("Test1", &pHead, expectedValues, sizeof(expectedValues) / sizeof(int));
+    test((char *)"test1", &pHead, expectedValues, sizeof(expectedValues) / sizeof(int));
 
     DestroyList(pHead);
 }
 
 // 没有重复的结点
-void Test2()
+void test2()
 {
     ListNode* pNode1 = CreateListNode(1);
     ListNode* pNode2 = CreateListNode(2);
@@ -133,13 +133,13 @@ void Test2()
     ListNode* pHead = pNode1;
 
     int expectedValues[] = { 1, 2, 3, 4, 5, 6, 7 };
-    Test("Test2", &pHead, expectedValues, sizeof(expectedValues) / sizeof(int));
+    test((char *)"test2", &pHead, expectedValues, sizeof(expectedValues) / sizeof(int));
 
     DestroyList(pHead);
 }
 
 // 除了一个结点之外其他所有结点的值都相同
-void Test3()
+void test3()
 {
     ListNode* pNode1 = CreateListNode(1);
     ListNode* pNode2 = CreateListNode(1);
@@ -159,13 +159,13 @@ void Test3()
     ListNode* pHead = pNode1;
 
     int expectedValues[] = { 2 };
-    Test("Test3", &pHead, expectedValues, sizeof(expectedValues) / sizeof(int));
+    test((char *)"test3", &pHead, expectedValues, sizeof(expectedValues) / sizeof(int));
 
     DestroyList(pHead);
 }
 
 // 所有结点的值都相同
-void Test4()
+void test4()
 {
     ListNode* pNode1 = CreateListNode(1);
     ListNode* pNode2 = CreateListNode(1);
@@ -184,13 +184,13 @@ void Test4()
 
     ListNode* pHead = pNode1;
 
-    Test("Test4", &pHead, nullptr, 0);
+    test((char *)"Test4", &pHead, nullptr, 0);
 
     DestroyList(pHead);
 }
 
 // 所有结点都成对出现
-void Test5()
+void test5()
 {
     ListNode* pNode1 = CreateListNode(1);
     ListNode* pNode2 = CreateListNode(1);
@@ -211,13 +211,13 @@ void Test5()
 
     ListNode* pHead = pNode1;
 
-    Test("Test5", &pHead, nullptr, 0);
+    test((char *)"Test5", &pHead, nullptr, 0);
 
     DestroyList(pHead);
 }
 
 // 除了两个结点之外其他结点都成对出现
-void Test6()
+void test6()
 {
     ListNode* pNode1 = CreateListNode(1);
     ListNode* pNode2 = CreateListNode(1);
@@ -239,13 +239,13 @@ void Test6()
     ListNode* pHead = pNode1;
 
     int expectedValues[] = { 2, 4 };
-    Test("Test6", &pHead, expectedValues, sizeof(expectedValues) / sizeof(int));
+    test((char *)"Test6", &pHead, expectedValues, sizeof(expectedValues) / sizeof(int));
 
     DestroyList(pHead);
 }
 
 // 链表中只有两个不重复的结点
-void Test7()
+void test7()
 {
     ListNode* pNode1 = CreateListNode(1);
     ListNode* pNode2 = CreateListNode(2);
@@ -255,13 +255,13 @@ void Test7()
     ListNode* pHead = pNode1;
 
     int expectedValues[] = { 1, 2 };
-    Test("Test7", &pHead, expectedValues, sizeof(expectedValues) / sizeof(int));
+    test((char *)"Test7", &pHead, expectedValues, sizeof(expectedValues) / sizeof(int));
 
     DestroyList(pHead);
 }
 
 // 结点中只有一个结点
-void Test8()
+void test8()
 {
     ListNode* pNode1 = CreateListNode(1);
 
@@ -270,13 +270,13 @@ void Test8()
     ListNode* pHead = pNode1;
 
     int expectedValues[] = { 1 };
-    Test("Test8", &pHead, expectedValues, sizeof(expectedValues) / sizeof(int));
+    test((char *)"Test8", &pHead, expectedValues, sizeof(expectedValues) / sizeof(int));
 
     DestroyList(pHead);
 }
 
 // 结点中只有两个重复的结点
-void Test9()
+void test9()
 {
     ListNode* pNode1 = CreateListNode(1);
     ListNode* pNode2 = CreateListNode(1);
@@ -285,31 +285,31 @@ void Test9()
 
     ListNode* pHead = pNode1;
 
-    Test("Test9", &pHead, nullptr, 0);
+    test((char *)"Test9", &pHead, nullptr, 0);
 
     DestroyList(pHead);
 }
 
 // 空链表
-void Test10()
+void test10()
 {
     ListNode* pHead = nullptr;
 
-    Test("Test10", &pHead, nullptr, 0);
+    test((char *)"Test10", &pHead, nullptr, 0);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
-    Test6();
-    Test7();
-    Test8();
-    Test9();
-    Test10();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
+    test6();
+    test7();
+    test8();
+    test9();
+    test10();
 
     return 0;
 }

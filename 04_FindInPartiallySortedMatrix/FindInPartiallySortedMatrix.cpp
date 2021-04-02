@@ -45,7 +45,7 @@ bool Find(int* matrix, int rows, int columns, int number)
 }
 
 // ====================测试代码====================
-void Test(char* testName, int* matrix, int rows, int columns, int number, bool expected)
+void test(char* testName, int* matrix, int rows, int columns, int number, bool expected)
 {
     if(testName != nullptr)
         printf("%s begins: ", testName);
@@ -62,10 +62,10 @@ void Test(char* testName, int* matrix, int rows, int columns, int number, bool e
 //  4   7   10  13
 //  6   8   11  15
 // 要查找的数在数组中
-void Test1()
+void test1()
 {
     int matrix[][4] = {{1, 2, 8, 9}, {2, 4, 9, 12}, {4, 7, 10, 13}, {6, 8, 11, 15}};
-    Test("Test1", (int*)matrix, 4, 4, 7, true);
+    test((char *)"Test1", (int*)matrix, 4, 4, 7, true);
 }
 
 //  1   2   8   9
@@ -73,10 +73,10 @@ void Test1()
 //  4   7   10  13
 //  6   8   11  15
 // 要查找的数不在数组中
-void Test2()
+void test2()
 {
     int matrix[][4] = {{1, 2, 8, 9}, {2, 4, 9, 12}, {4, 7, 10, 13}, {6, 8, 11, 15}};
-    Test("Test2", (int*)matrix, 4, 4, 5, false);
+    test((char *)"Test2", (int*)matrix, 4, 4, 5, false);
 }
 
 //  1   2   8   9
@@ -84,10 +84,10 @@ void Test2()
 //  4   7   10  13
 //  6   8   11  15
 // 要查找的数是数组中最小的数字
-void Test3()
+void test3()
 {
     int matrix[][4] = {{1, 2, 8, 9}, {2, 4, 9, 12}, {4, 7, 10, 13}, {6, 8, 11, 15}};
-    Test("Test3", (int*)matrix, 4, 4, 1, true);
+    test((char *)"Test3", (int*)matrix, 4, 4, 1, true);
 }
 
 //  1   2   8   9
@@ -95,10 +95,10 @@ void Test3()
 //  4   7   10  13
 //  6   8   11  15
 // 要查找的数是数组中最大的数字
-void Test4()
+void test4()
 {
     int matrix[][4] = {{1, 2, 8, 9}, {2, 4, 9, 12}, {4, 7, 10, 13}, {6, 8, 11, 15}};
-    Test("Test4", (int*)matrix, 4, 4, 15, true);
+    test((char *)"test4", (int*)matrix, 4, 4, 15, true);
 }
 
 //  1   2   8   9
@@ -106,10 +106,10 @@ void Test4()
 //  4   7   10  13
 //  6   8   11  15
 // 要查找的数比数组中最小的数字还小
-void Test5()
+void test5()
 {
     int matrix[][4] = {{1, 2, 8, 9}, {2, 4, 9, 12}, {4, 7, 10, 13}, {6, 8, 11, 15}};
-    Test("Test5", (int*)matrix, 4, 4, 0, false);
+    test((char *)"test5", (int*)matrix, 4, 4, 0, false);
 }
 
 //  1   2   8   9
@@ -117,27 +117,27 @@ void Test5()
 //  4   7   10  13
 //  6   8   11  15
 // 要查找的数比数组中最大的数字还大
-void Test6()
+void test6()
 {
     int matrix[][4] = {{1, 2, 8, 9}, {2, 4, 9, 12}, {4, 7, 10, 13}, {6, 8, 11, 15}};
-    Test("Test6", (int*)matrix, 4, 4, 16, false);
+    test((char *)"test6", (int*)matrix, 4, 4, 16, false);
 }
 
 // 鲁棒性测试，输入空指针
-void Test7()
+void test7()
 {
-    Test("Test7", nullptr, 0, 0, 16, false);
+    test((char *)"test7", nullptr, 0, 0, 16, false);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
-    Test6();
-    Test7();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
+    test6();
+    test7();
 
     return 0;
 }

@@ -80,11 +80,11 @@ void CMyString::Print()
     printf("%s", m_pData);
 }
 
-void Test1()
+void test1()
 {
     printf("Test1 begins:\n");
 
-    char* text = "Hello world";
+    char* text = (char *)"Hello world";
 
     CMyString str1(text);
     CMyString str2;
@@ -98,11 +98,11 @@ void Test1()
 }
 
 // 赋值给自己
-void Test2()
+void test2()
 {
     printf("Test2 begins:\n");
 
-    char* text = "Hello world";
+    char* text = (char *)"Hello world";
 
     CMyString str1(text);
     str1 = str1;
@@ -115,11 +115,11 @@ void Test2()
 }
 
 // 连续赋值
-void Test3()
+void test3()
 {
     printf("Test3 begins:\n");
 
-    char* text = "Hello world";
+    char* text = (char *)"Hello world";
 
     CMyString str1(text);
     CMyString str2, str3;
@@ -140,9 +140,9 @@ void Test3()
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
+    test1();
+    test2();
+    test3();
 
     return 0;
 }

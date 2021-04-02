@@ -115,14 +115,14 @@ void PrintProbability_Solution2(int number)
 }
 
 // ====================测试代码====================
-void Test(int n)
+void test(int n)
 {
-    printf("Test for %d begins:\n", n);
+    printf("test for %d begins:\n", n);
     
-    printf("Test for solution1\n");
+    printf("test for solution1\n");
     PrintProbability_Solution1(n);
 
-    printf("Test for solution2\n");
+    printf("test for solution2\n");
     PrintProbability_Solution2(n);
 
     printf("\n");
@@ -130,14 +130,14 @@ void Test(int n)
 
 int main(int argc, char* argv[])
 {
-    Test(1);
-    Test(2);
-    Test(3);
-    Test(4);
+    test(1);
+    test(2);
+    test(3);
+    test(4);
     
-    Test(11);
+    test(11);
 
-    Test(0);
+    test(0);
 
     return 0;
 }

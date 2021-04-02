@@ -18,7 +18,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 表3所示。
 
 #include <cstdio>
-#include "..\Utilities\List.h"
+#include "List.h"
 
 ListNode* Merge(ListNode* pHead1, ListNode* pHead2)
 {
@@ -44,7 +44,7 @@ ListNode* Merge(ListNode* pHead1, ListNode* pHead2)
 }
 
 // ====================测试代码====================
-ListNode* Test(char* testName, ListNode* pHead1, ListNode* pHead2)
+ListNode* test(char* testName, ListNode* pHead1, ListNode* pHead2)
 {
     if(testName != nullptr)
         printf("%s begins:\n", testName);
@@ -66,7 +66,7 @@ ListNode* Test(char* testName, ListNode* pHead1, ListNode* pHead2)
 
 // list1: 1->3->5
 // list2: 2->4->6
-void Test1()
+void test1()
 {
     ListNode* pNode1 = CreateListNode(1);
     ListNode* pNode3 = CreateListNode(3);
@@ -82,7 +82,7 @@ void Test1()
     ConnectListNodes(pNode2, pNode4);
     ConnectListNodes(pNode4, pNode6);
 
-    ListNode* pMergedHead = Test("Test1", pNode1, pNode2);
+    ListNode* pMergedHead = test((char *)"test1", pNode1, pNode2);
 
     DestroyList(pMergedHead);
 }
@@ -90,7 +90,7 @@ void Test1()
 // 两个链表中有重复的数字
 // list1: 1->3->5
 // list2: 1->3->5
-void Test2()
+void test2()
 {
     ListNode* pNode1 = CreateListNode(1);
     ListNode* pNode3 = CreateListNode(3);
@@ -106,7 +106,7 @@ void Test2()
     ConnectListNodes(pNode2, pNode4);
     ConnectListNodes(pNode4, pNode6);
 
-    ListNode* pMergedHead = Test("Test2", pNode1, pNode2);
+    ListNode* pMergedHead = test((char *)"test2", pNode1, pNode2);
 
     DestroyList(pMergedHead);
 }
@@ -114,12 +114,12 @@ void Test2()
 // 两个链表都只有一个数字
 // list1: 1
 // list2: 2
-void Test3()
+void test3()
 {
     ListNode* pNode1 = CreateListNode(1);
     ListNode* pNode2 = CreateListNode(2);
 
-    ListNode* pMergedHead = Test("Test3", pNode1, pNode2);
+    ListNode* pMergedHead = test((char *)"test3", pNode1, pNode2);
 
     DestroyList(pMergedHead);
 }
@@ -127,7 +127,7 @@ void Test3()
 // 一个链表为空链表
 // list1: 1->3->5
 // list2: 空链表
-void Test4()
+void test4()
 {
     ListNode* pNode1 = CreateListNode(1);
     ListNode* pNode3 = CreateListNode(3);
@@ -136,7 +136,7 @@ void Test4()
     ConnectListNodes(pNode1, pNode3);
     ConnectListNodes(pNode3, pNode5);
 
-    ListNode* pMergedHead = Test("Test4", pNode1, nullptr);
+    ListNode* pMergedHead = test((char *)"Test4", pNode1, nullptr);
 
     DestroyList(pMergedHead);
 }
@@ -144,18 +144,18 @@ void Test4()
 // 两个链表都为空链表
 // list1: 空链表
 // list2: 空链表
-void Test5()
+void test5()
 {
-    ListNode* pMergedHead = Test("Test5", nullptr, nullptr);
+    ListNode* pMergedHead = test((char *)"Test5", nullptr, nullptr);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
 
     return 0;
 }

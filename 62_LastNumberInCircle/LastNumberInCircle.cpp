@@ -69,7 +69,7 @@ int LastRemaining_Solution2(unsigned int n, unsigned int m)
 }
 
 // ====================测试代码====================
-void Test(const char* testName, unsigned int n, unsigned int m, int expected)
+void test(const char* testName, unsigned int n, unsigned int m, int expected)
 {
     if(testName != nullptr)
         printf("%s begins: \n", testName);
@@ -87,44 +87,44 @@ void Test(const char* testName, unsigned int n, unsigned int m, int expected)
     printf("\n");
 }
 
-void Test1()
+void test1()
 {
-    Test("Test1", 5, 3, 3);
+    test((char *)"test1", 5, 3, 3);
 }
 
-void Test2()
+void test2()
 {
-    Test("Test2", 5, 2, 2);
+    test((char *)"test2", 5, 2, 2);
 }
 
-void Test3()
+void test3()
 {
-    Test("Test3", 6, 7, 4);
+    test((char *)"test3", 6, 7, 4);
 }
 
-void Test4()
+void test4()
 {
-    Test("Test4", 6, 6, 3);
+    test((char *)"Test4", 6, 6, 3);
 }
 
-void Test5()
+void test5()
 {
-    Test("Test5", 0, 0, -1);
+    test((char *)"Test5", 0, 0, -1);
 }
 
-void Test6()
+void test6()
 {
-    Test("Test6", 4000, 997, 1027);
+    test((char *)"Test6", 4000, 997, 1027);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
-    Test6();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
+    test6();
 
     return 0;
 }

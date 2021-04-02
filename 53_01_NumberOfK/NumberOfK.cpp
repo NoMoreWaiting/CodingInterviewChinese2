@@ -88,7 +88,7 @@ int GetLastK(const int* data, int length, int k, int start, int end)
 }
 
 // ====================测试代码====================
-void Test(const char* testName, int data[], int length, int k, int expected)
+void test(const char* testName, int data[], int length, int k, int expected)
 {
     if(testName != nullptr)
         printf("%s begins: ", testName);
@@ -101,94 +101,94 @@ void Test(const char* testName, int data[], int length, int k, int expected)
 }
 
 // 查找的数字出现在数组的中间
-void Test1()
+void test1()
 {
     int data[] = {1, 2, 3, 3, 3, 3, 4, 5};
-    Test("Test1", data, sizeof(data) / sizeof(int), 3, 4);
+    test((char *)"test1", data, sizeof(data) / sizeof(int), 3, 4);
 }
 
 // 查找的数组出现在数组的开头
-void Test2()
+void test2()
 {
     int data[] = {3, 3, 3, 3, 4, 5};
-    Test("Test2", data, sizeof(data) / sizeof(int), 3, 4);
+    test((char *)"test2", data, sizeof(data) / sizeof(int), 3, 4);
 }
 
 // 查找的数组出现在数组的结尾
-void Test3()
+void test3()
 {
     int data[] = {1, 2, 3, 3, 3, 3};
-    Test("Test3", data, sizeof(data) / sizeof(int), 3, 4);
+    test((char *)"test3", data, sizeof(data) / sizeof(int), 3, 4);
 }
 
 // 查找的数字不存在
-void Test4()
+void test4()
 {
     int data[] = {1, 3, 3, 3, 3, 4, 5};
-    Test("Test4", data, sizeof(data) / sizeof(int), 2, 0);
+    test((char *)"Test4", data, sizeof(data) / sizeof(int), 2, 0);
 }
 
 // 查找的数字比第一个数字还小，不存在
-void Test5()
+void test5()
 {
     int data[] = {1, 3, 3, 3, 3, 4, 5};
-    Test("Test5", data, sizeof(data) / sizeof(int), 0, 0);
+    test((char *)"Test5", data, sizeof(data) / sizeof(int), 0, 0);
 }
 
 // 查找的数字比最后一个数字还大，不存在
-void Test6()
+void test6()
 {
     int data[] = {1, 3, 3, 3, 3, 4, 5};
-    Test("Test6", data, sizeof(data) / sizeof(int), 6, 0);
+    test((char *)"Test6", data, sizeof(data) / sizeof(int), 6, 0);
 }
 
 // 数组中的数字从头到尾都是查找的数字
-void Test7()
+void test7()
 {
     int data[] = {3, 3, 3, 3};
-    Test("Test7", data, sizeof(data) / sizeof(int), 3, 4);
+    test((char *)"Test7", data, sizeof(data) / sizeof(int), 3, 4);
 }
 
 // 数组中的数字从头到尾只有一个重复的数字，不是查找的数字
-void Test8()
+void test8()
 {
     int data[] = {3, 3, 3, 3};
-    Test("Test8", data, sizeof(data) / sizeof(int), 4, 0);
+    test((char *)"Test8", data, sizeof(data) / sizeof(int), 4, 0);
 }
 
 // 数组中只有一个数字，是查找的数字
-void Test9()
+void test9()
 {
     int data[] = {3};
-    Test("Test9", data, sizeof(data) / sizeof(int), 3, 1);
+    test((char *)"Test9", data, sizeof(data) / sizeof(int), 3, 1);
 }
 
 // 数组中只有一个数字，不是查找的数字
-void Test10()
+void test10()
 {
     int data[] = {3};
-    Test("Test10", data, sizeof(data) / sizeof(int), 4, 0);
+    test((char *)"Test10", data, sizeof(data) / sizeof(int), 4, 0);
 }
 
 // 鲁棒性测试，数组空指针
-void Test11()
+void test11()
 {
-    Test("Test11", nullptr, 0, 0, 0);
+    test((char *)"Test11", nullptr, 0, 0, 0);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
-    Test6();
-    Test7();
-    Test8();
-    Test9();
-    Test10();
-    Test11();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
+    test6();
+    test7();
+    test8();
+    test9();
+    test10();
+    test11();
 
     return 0;
 }

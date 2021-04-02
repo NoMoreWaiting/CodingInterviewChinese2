@@ -41,8 +41,8 @@ int MaxDiff(const int* numbers, unsigned length)
     return maxDiff;
 }
 
-// ==================== Test Code ====================
-void Test(const char* testName, const int* numbers, unsigned int length, int expected)
+// ==================== test Code ====================
+void test(const char* testName, const int* numbers, unsigned int length, int expected)
 {
     if(testName != nullptr)
         printf("%s begins: ", testName);
@@ -53,66 +53,66 @@ void Test(const char* testName, const int* numbers, unsigned int length, int exp
         printf("FAILED.\n");
 }
 
-void Test1()
+void test1()
 {
     int numbers[] = { 4, 1, 3, 2, 5 };
-    Test("Test1", numbers, sizeof(numbers) / sizeof(int), 4);
+    test((char *)"test1", numbers, sizeof(numbers) / sizeof(int), 4);
 }
 
 // 价格递增
-void Test2()
+void test2()
 {
     int numbers[] = { 1, 2, 4, 7, 11, 16 };
-    Test("Test2", numbers, sizeof(numbers) / sizeof(int), 15);
+    test((char *)"test2", numbers, sizeof(numbers) / sizeof(int), 15);
 }
 
 // 价格递减
-void Test3()
+void test3()
 {
     int numbers[] = { 16, 11, 7, 4, 2, 1 };
-    Test("Test3", numbers, sizeof(numbers) / sizeof(int), -1);
+    test((char *)"test3", numbers, sizeof(numbers) / sizeof(int), -1);
 }
 
 // 价格全部相同
-void Test4()
+void test4()
 {
 	int numbers[] = { 16, 16, 16, 16, 16 };
-	Test("Test4", numbers, sizeof(numbers) / sizeof(int), 0);
+	test((char *)"Test4", numbers, sizeof(numbers) / sizeof(int), 0);
 }
 
-void Test5()
+void test5()
 {
     int numbers[] = { 9, 11, 5, 7, 16, 1, 4, 2 };
-    Test("Test5", numbers, sizeof(numbers) / sizeof(int), 11);
+    test((char *)"Test5", numbers, sizeof(numbers) / sizeof(int), 11);
 }
 
-void Test6()
+void test6()
 {
     int numbers[] = { 2, 4 };
-    Test("Test6", numbers, sizeof(numbers) / sizeof(int), 2);
+    test((char *)"Test6", numbers, sizeof(numbers) / sizeof(int), 2);
 }
 
-void Test7()
+void test7()
 {
     int numbers[] = { 4, 2 };
-    Test("Test7", numbers, sizeof(numbers) / sizeof(int), -2);
+    test((char *)"Test7", numbers, sizeof(numbers) / sizeof(int), -2);
 }
 
-void Test8()
+void test8()
 {
-	Test("Test8", nullptr, 0, 0);
+	test((char *)"Test8", nullptr, 0, 0);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
-    Test6();
-	 Test7();
-	 Test8();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
+    test6();
+	 test7();
+	 test8();
 
     return 0;
 }

@@ -102,7 +102,7 @@ int PowerBase10(unsigned int n)
 }
 
 // ====================测试代码====================
-void Test(const char* testName, int n, int expected)
+void test(const char* testName, int n, int expected)
 {
     if(testName != nullptr)
         printf("%s begins: \n", testName);
@@ -120,21 +120,21 @@ void Test(const char* testName, int n, int expected)
     printf("\n");
 }
 
-void Test()
+void test()
 {
-    Test("Test1", 1, 1);
-    Test("Test2", 5, 1);
-    Test("Test3", 10, 2);
-    Test("Test4", 55, 16);
-    Test("Test5", 99, 20);
-    Test("Test6", 10000, 4001);
-    Test("Test7", 21345, 18821);
-    Test("Test8", 0, 0);
+    test((char *)"test1", 1, 1);
+    test((char *)"test2", 5, 1);
+    test((char *)"test3", 10, 2);
+    test((char *)"Test4", 55, 16);
+    test((char *)"Test5", 99, 20);
+    test((char *)"Test6", 10000, 4001);
+    test((char *)"Test7", 21345, 18821);
+    test((char *)"Test8", 0, 0);
 }
 
 int main(int argc, char* argv[])
 {
-    Test();
+    test();
 
     return 0;
 }

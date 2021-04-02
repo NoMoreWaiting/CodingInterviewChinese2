@@ -3,7 +3,6 @@ include_directories(${PROJECT_SOURCE_DIR}/Utilities)
 
 #4.source directory, 源文件目录
 AUX_SOURCE_DIRECTORY(${PROJECT_SOURCE_DIR}/Utilities SRC)
-MESSAGE("${SRC}")
 
 STRING( REGEX REPLACE ".*/(.*)" "\\1" CURRENT_FOLDER ${CMAKE_CURRENT_SOURCE_DIR} )
 

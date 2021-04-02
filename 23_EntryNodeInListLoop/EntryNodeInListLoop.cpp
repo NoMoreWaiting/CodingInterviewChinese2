@@ -17,7 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 环的入口结点是结点3。
 
 #include <cstdio>
-#include "../Utilities/list.h"
+#include "List.h"
 
 ListNode* MeetingNode(ListNode* pHead)
 {
@@ -75,8 +75,8 @@ ListNode* EntryNodeOfLoop(ListNode* pHead)
     return pNode1;
 }
 
-// ==================== Test Code ====================
-void Test(char* testName, ListNode* pHead, ListNode* entryNode)
+// ==================== test Code ====================
+void test(char* testName, ListNode* pHead, ListNode* entryNode)
 {
     if(testName != nullptr)
         printf("%s begins: ", testName);
@@ -88,29 +88,29 @@ void Test(char* testName, ListNode* pHead, ListNode* entryNode)
 }
 
 // A list has a node, without a loop
-void Test1()
+void test1()
 {
     ListNode* pNode1 = CreateListNode(1);
 
-    Test("Test1", pNode1, nullptr);
+    test((char *)"test1", pNode1, nullptr);
 
     DestroyList(pNode1);
 }
 
 // A list has a node, with a loop
-void Test2()
+void test2()
 {
     ListNode* pNode1 = CreateListNode(1);
     ConnectListNodes(pNode1, pNode1);
 
-    Test("Test2", pNode1, pNode1);
+    test((char *)"test2", pNode1, pNode1);
 
     delete pNode1;
     pNode1 = nullptr;
 }
 
 // A list has multiple nodes, with a loop 
-void Test3()
+void test3()
 {
     ListNode* pNode1 = CreateListNode(1);
     ListNode* pNode2 = CreateListNode(2);
@@ -124,7 +124,7 @@ void Test3()
     ConnectListNodes(pNode4, pNode5);
     ConnectListNodes(pNode5, pNode3);
 
-    Test("Test3", pNode1, pNode3);
+    test((char *)"test3", pNode1, pNode3);
 
     delete pNode1;
     pNode1 = nullptr;
@@ -139,7 +139,7 @@ void Test3()
 }
 
 // A list has multiple nodes, with a loop 
-void Test4()
+void test4()
 {
     ListNode* pNode1 = CreateListNode(1);
     ListNode* pNode2 = CreateListNode(2);
@@ -153,7 +153,7 @@ void Test4()
     ConnectListNodes(pNode4, pNode5);
     ConnectListNodes(pNode5, pNode1);
 
-    Test("Test4", pNode1, pNode1);
+    test((char *)"Test4", pNode1, pNode1);
 
     delete pNode1;
     pNode1 = nullptr;
@@ -168,7 +168,7 @@ void Test4()
 }
 
 // A list has multiple nodes, with a loop 
-void Test5()
+void test5()
 {
     ListNode* pNode1 = CreateListNode(1);
     ListNode* pNode2 = CreateListNode(2);
@@ -182,7 +182,7 @@ void Test5()
     ConnectListNodes(pNode4, pNode5);
     ConnectListNodes(pNode5, pNode5);
 
-    Test("Test5", pNode1, pNode5);
+    test((char *)"Test5", pNode1, pNode5);
 
     delete pNode1;
     pNode1 = nullptr;
@@ -197,7 +197,7 @@ void Test5()
 }
 
 // A list has multiple nodes, without a loop 
-void Test6()
+void test6()
 {
     ListNode* pNode1 = CreateListNode(1);
     ListNode* pNode2 = CreateListNode(2);
@@ -210,26 +210,26 @@ void Test6()
     ConnectListNodes(pNode3, pNode4);
     ConnectListNodes(pNode4, pNode5);
 
-    Test("Test6", pNode1, nullptr);
+    test((char *)"Test6", pNode1, nullptr);
 
     DestroyList(pNode1);
 }
 
 // Empty list
-void Test7()
+void test7()
 {
-    Test("Test7", nullptr, nullptr);
+    test((char *)"Test7", nullptr, nullptr);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
-    Test6();
-    Test7();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
+    test6();
+    test7();
 
     return 0;
 }

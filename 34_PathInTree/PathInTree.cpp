@@ -17,7 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 有路径。从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。
 
 #include <cstdio>
-#include "..\Utilities\BinaryTree.h"
+#include "BinaryTree.h"
 #include <vector>
 
 void FindPath(BinaryTreeNode* pRoot, int expectedSum, std::vector<int>& path, int& currentSum);
@@ -69,7 +69,7 @@ void FindPath
 } 
 
 // ====================测试代码====================
-void Test(char* testName, BinaryTreeNode* pRoot, int expectedSum)
+void test(char* testName, BinaryTreeNode* pRoot, int expectedSum)
 {
     if(testName != nullptr)
         printf("%s begins:\n", testName);
@@ -85,7 +85,7 @@ void Test(char* testName, BinaryTreeNode* pRoot, int expectedSum)
 //       /\        
 //      4  7     
 // 有两条路径上的结点和为22
-void Test1()
+void test1()
 {
     BinaryTreeNode* pNode10 = CreateBinaryTreeNode(10);
     BinaryTreeNode* pNode5 = CreateBinaryTreeNode(5);
@@ -97,7 +97,7 @@ void Test1()
     ConnectTreeNodes(pNode5, pNode4, pNode7);
 
     printf("Two paths should be found in Test1.\n");
-    Test("Test1", pNode10, 22);
+    test((char *)"test1", pNode10, 22);
 
     DestroyTree(pNode10);
 }
@@ -108,7 +108,7 @@ void Test1()
 //       /\        
 //      4  7     
 // 没有路径上的结点和为15
-void Test2()
+void test2()
 {
     BinaryTreeNode* pNode10 = CreateBinaryTreeNode(10);
     BinaryTreeNode* pNode5 = CreateBinaryTreeNode(5);
@@ -120,7 +120,7 @@ void Test2()
     ConnectTreeNodes(pNode5, pNode4, pNode7);
 
     printf("No paths should be found in Test2.\n");
-    Test("Test2", pNode10, 15);
+    test((char *)"test2", pNode10, 15);
 
     DestroyTree(pNode10);
 }
@@ -135,7 +135,7 @@ void Test2()
 //        /
 //       1
 // 有一条路径上面的结点和为15
-void Test3()
+void test3()
 {
     BinaryTreeNode* pNode5 = CreateBinaryTreeNode(5);
     BinaryTreeNode* pNode4 = CreateBinaryTreeNode(4);
@@ -149,7 +149,7 @@ void Test3()
     ConnectTreeNodes(pNode2, pNode1, nullptr);
 
     printf("One path should be found in Test3.\n");
-    Test("Test3", pNode5, 15);
+    test((char *)"test3", pNode5, 15);
 
     DestroyTree(pNode5);
 }
@@ -164,7 +164,7 @@ void Test3()
 //        \
 //         5
 // 没有路径上面的结点和为16
-void Test4()
+void test4()
 {
     BinaryTreeNode* pNode1 = CreateBinaryTreeNode(1);
     BinaryTreeNode* pNode2 = CreateBinaryTreeNode(2);
@@ -178,37 +178,37 @@ void Test4()
     ConnectTreeNodes(pNode4, nullptr, pNode5);
 
     printf("No paths should be found in Test4.\n");
-    Test("Test4", pNode1, 16);
+    test((char *)"Test4", pNode1, 16);
 
     DestroyTree(pNode1);
 }
 
 // 树中只有1个结点
-void Test5()
+void test5()
 {
     BinaryTreeNode* pNode1 = CreateBinaryTreeNode(1);
 
     printf("One path should be found in Test5.\n");
-    Test("Test5", pNode1, 1);
+    test((char *)"Test5", pNode1, 1);
 
     DestroyTree(pNode1);
 }
 
 // 树中没有结点
-void Test6()
+void test6()
 {
     printf("No paths should be found in Test6.\n");
-    Test("Test6", nullptr, 0);
+    test((char *)"Test6", nullptr, 0);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
-    Test6();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
+    test6();
 
     return 0;
 }

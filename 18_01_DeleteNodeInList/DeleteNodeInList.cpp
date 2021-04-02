@@ -17,7 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 结点。
 
 #include <cstdio>
-#include "..\Utilities\List.h"
+#include "List.h"
 
 void DeleteNode(ListNode** pListHead, ListNode* pToBeDeleted)
 {
@@ -57,7 +57,7 @@ void DeleteNode(ListNode** pListHead, ListNode* pToBeDeleted)
 }
 
 // ====================测试代码====================
-void Test(ListNode* pListHead, ListNode* pNode)
+void test(ListNode* pListHead, ListNode* pNode)
 {
     printf("The original list is: \n");
     PrintList(pListHead);
@@ -72,7 +72,7 @@ void Test(ListNode* pListHead, ListNode* pNode)
 }
 
 // 链表中有多个结点，删除中间的结点
-void Test1()
+void test1()
 {
     ListNode* pNode1 = CreateListNode(1);
     ListNode* pNode2 = CreateListNode(2);
@@ -85,13 +85,13 @@ void Test1()
     ConnectListNodes(pNode3, pNode4);
     ConnectListNodes(pNode4, pNode5);
 
-    Test(pNode1, pNode3);
+    test(pNode1, pNode3);
 
     DestroyList(pNode1);
 }
 
 // 链表中有多个结点，删除尾结点
-void Test2()
+void test2()
 {
     ListNode* pNode1 = CreateListNode(1);
     ListNode* pNode2 = CreateListNode(2);
@@ -104,13 +104,13 @@ void Test2()
     ConnectListNodes(pNode3, pNode4);
     ConnectListNodes(pNode4, pNode5);
 
-    Test(pNode1, pNode5);
+    test(pNode1, pNode5);
 
     DestroyList(pNode1);
 }
 
 // 链表中有多个结点，删除头结点
-void Test3()
+void test3()
 {
     ListNode* pNode1 = CreateListNode(1);
     ListNode* pNode2 = CreateListNode(2);
@@ -123,32 +123,32 @@ void Test3()
     ConnectListNodes(pNode3, pNode4);
     ConnectListNodes(pNode4, pNode5);
 
-    Test(pNode1, pNode1);
+    test(pNode1, pNode1);
 
     DestroyList(pNode1);
 }
 
 // 链表中只有一个结点，删除头结点
-void Test4()
+void test4()
 {
     ListNode* pNode1 = CreateListNode(1);
 
-    Test(pNode1, pNode1);
+    test(pNode1, pNode1);
 }
 
 // 链表为空
-void Test5()
+void test5()
 {
-    Test(nullptr, nullptr);
+    test(nullptr, nullptr);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
 
     return 0;
 }

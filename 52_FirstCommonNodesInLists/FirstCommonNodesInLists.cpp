@@ -16,7 +16,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 题目：输入两个链表，找出它们的第一个公共结点。
 
 #include <cstdio>
-#include "..\Utilities\List.h"
+#include "List.h"
 
 unsigned int GetListLength(ListNode* pHead);
 
@@ -70,7 +70,7 @@ unsigned int GetListLength(ListNode* pHead)
 // ====================测试代码====================
 void DestroyNode(ListNode* pNode);
 
-void Test(char* testName, ListNode* pHead1, ListNode* pHead2, ListNode* pExpected)
+void test(char* testName, ListNode* pHead1, ListNode* pHead2, ListNode* pExpected)
 {
     if(testName != nullptr)
         printf("%s begins: ", testName);
@@ -86,7 +86,7 @@ void Test(char* testName, ListNode* pHead1, ListNode* pHead2, ListNode* pExpecte
 // 1 - 2 - 3 \
 //            6 - 7
 //     4 - 5 /
-void Test1()
+void test1()
 {
     ListNode* pNode1 = CreateListNode(1);
     ListNode* pNode2 = CreateListNode(2);
@@ -103,7 +103,7 @@ void Test1()
     ConnectListNodes(pNode5, pNode6);
     ConnectListNodes(pNode6, pNode7);
 
-    Test("Test1", pNode1, pNode4, pNode6);
+    test((char *)"test1", pNode1, pNode4, pNode6);
 
     DestroyNode(pNode1);
     DestroyNode(pNode2);
@@ -118,7 +118,7 @@ void Test1()
 // 1 - 2 - 3 - 4
 //            
 // 5 - 6 - 7
-void Test2()
+void test2()
 {
     ListNode* pNode1 = CreateListNode(1);
     ListNode* pNode2 = CreateListNode(2);
@@ -134,7 +134,7 @@ void Test2()
     ConnectListNodes(pNode5, pNode6);
     ConnectListNodes(pNode6, pNode7);
 
-    Test("Test2", pNode1, pNode5, nullptr);
+    test((char *)"test2", pNode1, pNode5, nullptr);
 
     DestroyList(pNode1);
     DestroyList(pNode5);
@@ -144,7 +144,7 @@ void Test2()
 // 1 - 2 - 3 - 4 \
 //                7
 //         5 - 6 /
-void Test3()
+void test3()
 {
     ListNode* pNode1 = CreateListNode(1);
     ListNode* pNode2 = CreateListNode(2);
@@ -161,7 +161,7 @@ void Test3()
     ConnectListNodes(pNode5, pNode6);
     ConnectListNodes(pNode6, pNode7);
 
-    Test("Test3", pNode1, pNode5, pNode7);
+    test((char *)"test3", pNode1, pNode5, pNode7);
 
     DestroyNode(pNode1);
     DestroyNode(pNode2);
@@ -175,7 +175,7 @@ void Test3()
 // 公共结点是第一个结点
 // 1 - 2 - 3 - 4 - 5
 // 两个链表完全重合   
-void Test4()
+void test4()
 {
     ListNode* pNode1 = CreateListNode(1);
     ListNode* pNode2 = CreateListNode(2);
@@ -188,13 +188,13 @@ void Test4()
     ConnectListNodes(pNode3, pNode4);
     ConnectListNodes(pNode4, pNode5);
 
-    Test("Test4", pNode1, pNode1, pNode1);
+    test((char *)"Test4", pNode1, pNode1, pNode1);
 
     DestroyList(pNode1);
 }
 
 // 输入的两个链表有一个空链表
-void Test5()
+void test5()
 {
     ListNode* pNode1 = CreateListNode(1);
     ListNode* pNode2 = CreateListNode(2);
@@ -207,15 +207,15 @@ void Test5()
     ConnectListNodes(pNode3, pNode4);
     ConnectListNodes(pNode4, pNode5);
 
-    Test("Test5", nullptr, pNode1, nullptr);
+    test((char *)"Test5", nullptr, pNode1, nullptr);
 
     DestroyList(pNode1);
 }
 
 // 输入的两个链表有一个空链表
-void Test6()
+void test6()
 {
-    Test("Test6", nullptr, nullptr, nullptr);
+    test((char *)"Test6", nullptr, nullptr, nullptr);
 }
 
 void DestroyNode(ListNode* pNode)
@@ -226,12 +226,12 @@ void DestroyNode(ListNode* pNode)
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
-    Test6();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
+    test6();
 
     return 0;
 }

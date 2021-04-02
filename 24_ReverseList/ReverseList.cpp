@@ -17,7 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 头结点。
 
 #include <cstdio>
-#include "..\Utilities\List.h"
+#include "List.h"
 
 ListNode* ReverseList(ListNode* pHead)
 {
@@ -55,7 +55,7 @@ ListNode* Test(ListNode* pHead)
 }
 
 // 输入的链表有多个结点
-void Test1()
+void test1()
 {
     ListNode* pNode1 = CreateListNode(1);
     ListNode* pNode2 = CreateListNode(2);
@@ -74,7 +74,7 @@ void Test1()
 }
 
 // 输入的链表只有一个结点
-void Test2()
+void test2()
 {
     ListNode* pNode1 = CreateListNode(1);
 
@@ -84,16 +84,16 @@ void Test2()
 }
 
 // 输入空链表
-void Test3()
+void test3()
 {
     Test(nullptr);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
+    test1();
+    test2();
+    test3();
 
     return 0;
 }

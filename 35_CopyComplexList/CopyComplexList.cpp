@@ -88,7 +88,7 @@ ComplexListNode* ReconnectNodes(ComplexListNode* pHead)
 }
 
 // ====================测试代码====================
-void Test(const char* testName, ComplexListNode* pHead)
+void test(const char* testName, ComplexListNode* pHead)
 {
     if(testName != nullptr)
         printf("%s begins:\n", testName);
@@ -108,7 +108,7 @@ void Test(const char* testName, ComplexListNode* pHead)
 //  |       |      /|\             /|\
 //  --------+--------               |
 //          -------------------------
-void Test1()
+void test1()
 {
     ComplexListNode* pNode1 = CreateNode(1);
     ComplexListNode* pNode2 = CreateNode(2);
@@ -121,7 +121,7 @@ void Test1()
     BuildNodes(pNode3, pNode4, nullptr);
     BuildNodes(pNode4, pNode5, pNode2);
 
-    Test("Test1", pNode1);
+    test((char *)"test1", pNode1);
 }
 
 // m_pSibling指向结点自身
@@ -131,7 +131,7 @@ void Test1()
 //         |       | /|\           /|\
 //         |       | --             |
 //         |------------------------|
-void Test2()
+void test2()
 {
     ComplexListNode* pNode1 = CreateNode(1);
     ComplexListNode* pNode2 = CreateNode(2);
@@ -144,7 +144,7 @@ void Test2()
     BuildNodes(pNode3, pNode4, pNode3);
     BuildNodes(pNode4, pNode5, pNode2);
 
-    Test("Test2", pNode1);
+    test((char *)"test2", pNode1);
 }
 
 // m_pSibling形成环
@@ -154,7 +154,7 @@ void Test2()
 //          |              /|\
 //          |               |
 //          |---------------|
-void Test3()
+void test3()
 {
     ComplexListNode* pNode1 = CreateNode(1);
     ComplexListNode* pNode2 = CreateNode(2);
@@ -167,31 +167,31 @@ void Test3()
     BuildNodes(pNode3, pNode4, nullptr);
     BuildNodes(pNode4, pNode5, pNode2);
 
-    Test("Test3", pNode1);
+    test((char *)"test3", pNode1);
 }
 
 // 只有一个结点
-void Test4()
+void test4()
 {
     ComplexListNode* pNode1 = CreateNode(1);
     BuildNodes(pNode1, nullptr, pNode1);
 
-    Test("Test4", pNode1);
+    test((char *)"Test4", pNode1);
 }
 
 // 鲁棒性测试
-void Test5()
+void test5()
 {
-    Test("Test5", nullptr);
+    test((char *)"Test5", nullptr);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
 
     return 0;
 }

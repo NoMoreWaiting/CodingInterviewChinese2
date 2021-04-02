@@ -136,7 +136,7 @@ void DestroyTree(BinaryTreeNode* pRoot)
 }
 
 // ====================测试代码====================
-void Test(char* testName, BinaryTreeNode* pNode, BinaryTreeNode* expected)
+void test(char* testName, BinaryTreeNode* pNode, BinaryTreeNode* expected)
 {
     if(testName != nullptr)
         printf("%s begins: ", testName);
@@ -165,13 +165,13 @@ void Test1_7()
     ConnectTreeNodes(pNode6, pNode5, pNode7);
     ConnectTreeNodes(pNode10, pNode9, pNode11);
 
-    Test("Test1", pNode8, pNode9);
-    Test("Test2", pNode6, pNode7);
-    Test("Test3", pNode10, pNode11);
-    Test("Test4", pNode5, pNode6);
-    Test("Test5", pNode7, pNode8);
-    Test("Test6", pNode9, pNode10);
-    Test("Test7", pNode11, nullptr);
+    test((char *)"test1", pNode8, pNode9);
+    test((char *)"test2", pNode6, pNode7);
+    test((char *)"test3", pNode10, pNode11);
+    test((char *)"test4", pNode5, pNode6);
+    test((char *)"test5", pNode7, pNode8);
+    test((char *)"test6", pNode9, pNode10);
+    test((char *)"test7", pNode11, nullptr);
 
     DestroyTree(pNode8);
 }
@@ -191,10 +191,10 @@ void Test8_11()
     ConnectTreeNodes(pNode4, pNode3, nullptr);
     ConnectTreeNodes(pNode3, pNode2, nullptr);
 
-    Test("Test8", pNode5, nullptr);
-    Test("Test9", pNode4, pNode5);
-    Test("Test10", pNode3, pNode4);
-    Test("Test11", pNode2, pNode3);
+    test((char *)"Test8", pNode5, nullptr);
+    test((char *)"Test9", pNode4, pNode5);
+    test((char *)"Test10", pNode3, pNode4);
+    test((char *)"Test11", pNode2, pNode3);
 
     DestroyTree(pNode5);
 }
@@ -214,10 +214,10 @@ void Test12_15()
     ConnectTreeNodes(pNode3, nullptr, pNode4);
     ConnectTreeNodes(pNode4, nullptr, pNode5);
 
-    Test("Test12", pNode5, nullptr);
-    Test("Test13", pNode4, pNode5);
-    Test("Test14", pNode3, pNode4);
-    Test("Test15", pNode2, pNode3);
+    test((char *)"Test12", pNode5, nullptr);
+    test((char *)"Test13", pNode4, pNode5);
+    test((char *)"Test14", pNode3, pNode4);
+    test((char *)"Test15", pNode2, pNode3);
 
     DestroyTree(pNode2);
 }
@@ -226,7 +226,7 @@ void Test16()
 {
     BinaryTreeNode* pNode5 = CreateBinaryTreeNode(5);
 
-    Test("Test16", pNode5, nullptr);
+    test((char *)"Test16", pNode5, nullptr);
 
     DestroyTree(pNode5);
 }

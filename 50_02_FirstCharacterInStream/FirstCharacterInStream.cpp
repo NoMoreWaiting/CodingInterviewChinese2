@@ -68,7 +68,7 @@ private:
 };
 
 // ====================测试代码====================
-void Test(const char* testName, CharStatistics chars, char expected)
+void test(const char* testName, CharStatistics chars, char expected)
 {
     if(testName != nullptr)
         printf("%s begins: ", testName);
@@ -83,25 +83,25 @@ int main(int argc, char* argv[])
 {
     CharStatistics chars;
 
-    Test("Test1", chars, '\0');
+    test((char *)"test1", chars, '\0');
 
     chars.Insert('g');
-    Test("Test2", chars, 'g');
+    test((char *)"test2", chars, 'g');
 
     chars.Insert('o');
-    Test("Test3", chars, 'g');
+    test((char *)"test3", chars, 'g');
 
     chars.Insert('o');
-    Test("Test4", chars, 'g');
+    test((char *)"Test4", chars, 'g');
 
     chars.Insert('g');
-    Test("Test5", chars, '\0');
+    test((char *)"Test5", chars, '\0');
 
     chars.Insert('l');
-    Test("Test6", chars, 'l');
+    test((char *)"Test6", chars, 'l');
 
     chars.Insert('e');
-    Test("Test7", chars, 'l');
+    test((char *)"Test7", chars, 'l');
 
     return 0;
 }

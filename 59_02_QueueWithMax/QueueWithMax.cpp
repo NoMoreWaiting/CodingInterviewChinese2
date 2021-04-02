@@ -20,6 +20,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 #include <cstdio>
 #include <deque>
 #include <exception>
+#include <stdexcept>
 
 using namespace std;
 
@@ -45,7 +46,7 @@ public:
     void pop_front()
     {
         if(maximums.empty())
-            throw new exception("queue is empty");
+            throw logic_error("queue is empty");
 
         if(maximums.front().index == data.front().index)
             maximums.pop_front();
@@ -56,7 +57,7 @@ public:
     T max() const
     {
         if(maximums.empty())
-            throw new exception("queue is empty");
+            throw logic_error("queue is empty");
 
         return maximums.front().number;
     }
@@ -74,7 +75,7 @@ private:
 };
 
 // ====================测试代码====================
-void Test(const char* testName, const QueueWithMax<int>& queue, int expected)
+void test(const char* testName, const QueueWithMax<int>& queue, int expected)
 {
     if(testName != nullptr)
         printf("%s begins: ", testName);
@@ -90,59 +91,59 @@ int main(int argc, char* argv[])
     QueueWithMax<int> queue;
     // {2}
     queue.push_back(2);
-    Test("Test1", queue, 2);
+    test((char *)"test1", queue, 2);
 
     // {2, 3}
     queue.push_back(3);
-    Test("Test2", queue, 3);
+    test((char *)"test2", queue, 3);
 
     // {2, 3, 4}
     queue.push_back(4);
-    Test("Test3", queue, 4);
+    test((char *)"test3", queue, 4);
 
     // {2, 3, 4, 2}
     queue.push_back(2);
-    Test("Test4", queue, 4);
+    test((char *)"Test4", queue, 4);
 
     // {3, 4, 2}
     queue.pop_front();
-    Test("Test5", queue, 4);
+    test((char *)"Test5", queue, 4);
 
     // {4, 2}
     queue.pop_front();
-    Test("Test6", queue, 4);
+    test((char *)"Test6", queue, 4);
 
     // {2}
     queue.pop_front();
-    Test("Test7", queue, 2);
+    test((char *)"Test7", queue, 2);
 
     // {2, 6}
     queue.push_back(6);
-    Test("Test8", queue, 6);
+    test((char *)"Test8", queue, 6);
 
     // {2, 6, 2}
     queue.push_back(2);
-    Test("Test9", queue, 6);
+    test((char *)"Test9", queue, 6);
 
     // {2, 6, 2, 5}
     queue.push_back(5);
-    Test("Test9", queue, 6);
+    test((char *)"Test9", queue, 6);
 
     // {6, 2, 5}
     queue.pop_front();
-    Test("Test10", queue, 6);
+    test((char *)"Test10", queue, 6);
 
     // {2, 5}
     queue.pop_front();
-    Test("Test11", queue, 5);
+    test((char *)"Test11", queue, 5);
 
     // {5}
     queue.pop_front();
-    Test("Test12", queue, 5);
+    test((char *)"Test12", queue, 5);
 
     // {5, 1}
     queue.push_back(1);
-    Test("Test13", queue, 5);
+    test((char *)"Test13", queue, 5);
 
     return 0;
 }

@@ -18,7 +18,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 字2，该函数将返回左旋转2位得到的结果"cdefgab"。
 
 #include <cstdio>
-#include "..\Utilities\StringUtil.h"
+#include "StringUtil.h"
 #include <string.h>
 
 char* LeftRotateString(char* pStr, int n)
@@ -46,7 +46,7 @@ char* LeftRotateString(char* pStr, int n)
 }
 
 // ====================测试代码====================
-void Test(const char* testName, char* input, int num, const char* expectedResult)
+void test(const char* testName, char* input, int num, const char* expectedResult)
 {
     if(testName != nullptr)
         printf("%s begins: ", testName);
@@ -61,64 +61,64 @@ void Test(const char* testName, char* input, int num, const char* expectedResult
 }
 
 // 功能测试
-void Test1()
+void test1()
 {
     char input[] = "abcdefg";
     char expected[] = "cdefgab";
 
-    Test("Test1", input, 2, expected);
+    test((char *)"test1", input, 2, expected);
 }
 
 // 边界值测试
-void Test2()
+void test2()
 {
     char input[] = "abcdefg";
     char expected[] = "bcdefga";
 
-    Test("Test2", input, 1, expected);
+    test((char *)"test2", input, 1, expected);
 }
 
 // 边界值测试
-void Test3()
+void test3()
 {
     char input[] = "abcdefg";
     char expected[] = "gabcdef";
 
-    Test("Test3", input, 6, expected);
+    test((char *)"test3", input, 6, expected);
 }
 
 // 鲁棒性测试
-void Test4()
+void test4()
 {
-    Test("Test4", nullptr, 6, nullptr);
+    test((char *)"Test4", nullptr, 6, nullptr);
 }
 
 // 鲁棒性测试
-void Test5()
-{
-    char input[] = "abcdefg";
-    char expected[] = "abcdefg";
-
-    Test("Test5", input, 0, expected);
-}
-
-// 鲁棒性测试
-void Test6()
+void test5()
 {
     char input[] = "abcdefg";
     char expected[] = "abcdefg";
 
-    Test("Test6", input, 7, expected);
+    test((char *)"Test5", input, 0, expected);
+}
+
+// 鲁棒性测试
+void test6()
+{
+    char input[] = "abcdefg";
+    char expected[] = "abcdefg";
+
+    test((char *)"Test6", input, 7, expected);
 }
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
-    Test6();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
+    test6();
 
     return 0;
 }

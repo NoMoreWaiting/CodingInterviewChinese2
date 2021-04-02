@@ -18,6 +18,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 
 #include <cstdio>
 #include <memory>
+#include <cstring>
 
 void PrintNumber(char* number);
 bool Increment(char* number);
@@ -132,23 +133,23 @@ void PrintNumber(char* number)
 }
 
 // ====================测试代码====================
-void Test(int n)
+void test(int n)
 {
-    printf("Test for %d begins:\n", n);
+    printf("test for %d begins:\n", n);
 
     Print1ToMaxOfNDigits_1(n);
     Print1ToMaxOfNDigits_2(n);
 
-    printf("\nTest for %d ends.\n", n);
+    printf("\ntest for %d ends.\n", n);
 }
 
 int main(int argc, char* argv[])
 {
-    Test(1);
-    Test(2);
-    Test(3);
-    Test(0);
-    Test(-1);
+    test(1);
+    test(2);
+    test(3);
+    test(0);
+    test(-1);
 
     return 0;
 }

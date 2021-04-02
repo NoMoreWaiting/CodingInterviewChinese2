@@ -18,7 +18,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 其他行以此类推。
 
 #include <cstdio>
-#include "..\Utilities\BinaryTree.h"
+#include "BinaryTree.h"
 #include <stack>
 
 void Print(BinaryTreeNode* pRoot)
@@ -66,7 +66,7 @@ void Print(BinaryTreeNode* pRoot)
 //            8
 //        6      10
 //       5 7    9  11
-void Test1()
+void test1()
 {
     BinaryTreeNode* pNode8 = CreateBinaryTreeNode(8);
     BinaryTreeNode* pNode6 = CreateBinaryTreeNode(6);
@@ -97,7 +97,7 @@ void Test1()
 //          4
 //        3
 //      2
-void Test2()
+void test2()
 {
     BinaryTreeNode* pNode5 = CreateBinaryTreeNode(5);
     BinaryTreeNode* pNode4 = CreateBinaryTreeNode(4);
@@ -126,7 +126,7 @@ void Test2()
 //         4
 //          3
 //           2
-void Test3()
+void test3()
 {
     BinaryTreeNode* pNode5 = CreateBinaryTreeNode(5);
     BinaryTreeNode* pNode4 = CreateBinaryTreeNode(4);
@@ -151,7 +151,7 @@ void Test3()
     DestroyTree(pNode5);
 }
 
-void Test4()
+void test4()
 {
     BinaryTreeNode* pNode5 = CreateBinaryTreeNode(5);
 
@@ -166,7 +166,7 @@ void Test4()
     DestroyTree(pNode5);
 }
 
-void Test5()
+void test5()
 {
     printf("====Test5 Begins: ====\n");
     printf("Expected Result is:\n");
@@ -181,7 +181,7 @@ void Test5()
 //       50   
 //         \
 //         150
-void Test6()
+void test6()
 {
     BinaryTreeNode* pNode100 = CreateBinaryTreeNode(100);
     BinaryTreeNode* pNode50 = CreateBinaryTreeNode(50);
@@ -205,7 +205,7 @@ void Test6()
 //        4              12
 //     2     6       10      14
 //   1  3  5  7     9 11   13  15
-void Test7()
+void test7()
 {
     BinaryTreeNode* pNode8 = CreateBinaryTreeNode(8);
     BinaryTreeNode* pNode4 = CreateBinaryTreeNode(4);
@@ -247,13 +247,13 @@ void Test7()
 
 int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
-    Test6();
-    Test7();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
+    test6();
+    test7();
 
     return 0;
 }

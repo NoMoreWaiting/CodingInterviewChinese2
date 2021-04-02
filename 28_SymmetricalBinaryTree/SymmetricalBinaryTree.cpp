@@ -42,7 +42,7 @@ bool isSymmetrical(BinaryTreeNode* pRoot1, BinaryTreeNode* pRoot2)
 }
 
 // ====================测试代码====================
-void Test(char* testName, BinaryTreeNode* pRoot, bool expected)
+void test(char* testName, BinaryTreeNode* pRoot, bool expected)
 {
     if(testName != nullptr)
         printf("%s begins: ", testName);
@@ -56,7 +56,7 @@ void Test(char* testName, BinaryTreeNode* pRoot, bool expected)
 //            8
 //        6      6
 //       5 7    7 5
-void Test1()
+void test1()
 {
     BinaryTreeNode* pNode8 = CreateBinaryTreeNode(8);
     BinaryTreeNode* pNode61 = CreateBinaryTreeNode(6);
@@ -70,7 +70,7 @@ void Test1()
     ConnectTreeNodes(pNode61, pNode51, pNode71);
     ConnectTreeNodes(pNode62, pNode72, pNode52);
 
-    Test("Test1", pNode8, true);
+    test((char *)"test1", pNode8, true);
 
     DestroyTree(pNode8);
 }
@@ -78,7 +78,7 @@ void Test1()
 //            8
 //        6      9
 //       5 7    7 5
-void Test2()
+void test2()
 {
     BinaryTreeNode* pNode8 = CreateBinaryTreeNode(8);
     BinaryTreeNode* pNode61 = CreateBinaryTreeNode(6);
@@ -92,7 +92,7 @@ void Test2()
     ConnectTreeNodes(pNode61, pNode51, pNode71);
     ConnectTreeNodes(pNode9, pNode72, pNode52);
 
-    Test("Test2", pNode8, false);
+    test((char *)"test2", pNode8, false);
 
     DestroyTree(pNode8);
 }
@@ -100,7 +100,7 @@ void Test2()
 //            8
 //        6      6
 //       5 7    7
-void Test3()
+void test3()
 {
     BinaryTreeNode* pNode8 = CreateBinaryTreeNode(8);
     BinaryTreeNode* pNode61 = CreateBinaryTreeNode(6);
@@ -113,7 +113,7 @@ void Test3()
     ConnectTreeNodes(pNode61, pNode51, pNode71);
     ConnectTreeNodes(pNode62, pNode72, nullptr);
 
-    Test("Test3", pNode8, false);
+    test((char *)"test3", pNode8, false);
 
     DestroyTree(pNode8);
 }
@@ -127,7 +127,7 @@ void Test3()
 //         2           2
 //        /             \
 //       1               1
-void Test4()
+void test4()
 {
     BinaryTreeNode* pNode5 = CreateBinaryTreeNode(5);
     BinaryTreeNode* pNode31 = CreateBinaryTreeNode(3);
@@ -147,7 +147,7 @@ void Test4()
     ConnectTreeNodes(pNode21, pNode11, nullptr);
     ConnectTreeNodes(pNode22, nullptr, pNode12);
 
-    Test("Test4", pNode5, true);
+    test((char *)"Test4", pNode5, true);
 
     DestroyTree(pNode5);
 }
@@ -162,7 +162,7 @@ void Test4()
 //         6           2
 //        /             \
 //       1               1
-void Test5()
+void test5()
 {
     BinaryTreeNode* pNode5 = CreateBinaryTreeNode(5);
     BinaryTreeNode* pNode31 = CreateBinaryTreeNode(3);
@@ -182,7 +182,7 @@ void Test5()
     ConnectTreeNodes(pNode6, pNode11, nullptr);
     ConnectTreeNodes(pNode22, nullptr, pNode12);
 
-    Test("Test5", pNode5, false);
+    test((char *)"Test5", pNode5, false);
 
     DestroyTree(pNode5);
 }
@@ -196,7 +196,7 @@ void Test5()
 //         2           2
 //                      \
 //                       1
-void Test6()
+void test6()
 {
     BinaryTreeNode* pNode5 = CreateBinaryTreeNode(5);
     BinaryTreeNode* pNode31 = CreateBinaryTreeNode(3);
@@ -215,24 +215,24 @@ void Test6()
     ConnectTreeNodes(pNode21, nullptr, nullptr);
     ConnectTreeNodes(pNode22, nullptr, pNode12);
 
-    Test("Test6", pNode5, false);
+    test((char *)"Test6", pNode5, false);
 
     DestroyTree(pNode5);
 }
 
 // 只有一个结点
-void Test7()
+void test7()
 {
     BinaryTreeNode* pNode1 = CreateBinaryTreeNode(1);
-    Test("Test7", pNode1, true);
+    test((char *)"Test7", pNode1, true);
 
     DestroyTree(pNode1);
 }
 
 // 没有结点
-void Test8()
+void test8()
 {
-    Test("Test8", nullptr, true);
+    test((char *)"Test8", nullptr, true);
 }
 
 // 所有结点都有相同的值，树对称
@@ -243,7 +243,7 @@ void Test8()
 //           5       5
 //          /         \
 //         5           5
-void Test9()
+void test9()
 {
     BinaryTreeNode* pNode1 = CreateBinaryTreeNode(5);
     BinaryTreeNode* pNode21 = CreateBinaryTreeNode(5);
@@ -261,7 +261,7 @@ void Test9()
     ConnectTreeNodes(pNode41, nullptr, nullptr);
     ConnectTreeNodes(pNode42, nullptr, nullptr);
 
-    Test("Test9", pNode1, true);
+    test((char *)"Test9", pNode1, true);
 
     DestroyTree(pNode1);
 }
@@ -274,7 +274,7 @@ void Test9()
 //           5       5
 //          /       /
 //         5       5
-void Test10()
+void test10()
 {
     BinaryTreeNode* pNode1 = CreateBinaryTreeNode(5);
     BinaryTreeNode* pNode21 = CreateBinaryTreeNode(5);
@@ -292,21 +292,21 @@ void Test10()
     ConnectTreeNodes(pNode41, nullptr, nullptr);
     ConnectTreeNodes(pNode42, nullptr, nullptr);
 
-    Test("Test10", pNode1, false);
+    test((char *)"Test10", pNode1, false);
 
     DestroyTree(pNode1);
 }
 
-void main(int argc, char* argv[])
+int main(int argc, char* argv[])
 {
-    Test1();
-    Test2();
-    Test3();
-    Test4();
-    Test5();
-    Test6();
-    Test7();
-    Test8();
-    Test9();
-    Test10();
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
+    test6();
+    test7();
+    test8();
+    test9();
+    test10();
 }
