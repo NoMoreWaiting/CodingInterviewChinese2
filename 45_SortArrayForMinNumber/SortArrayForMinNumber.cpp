@@ -18,19 +18,18 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 字能排成的最小数字321323。
 
 #include "cstdio"
-#include <string>
 #include <algorithm>
 #include <cstring>
 
 int compare(const void* strNumber1, const void* strNumber2);
 
-// int型整数用十进制表示最多只有10位
+// int 型整数用十进制表示最多只有 10 位
 const int g_MaxNumberLength = 10;
  
 char* g_StrCombine1 = new char[g_MaxNumberLength * 2 + 1];
 char* g_StrCombine2 = new char[g_MaxNumberLength * 2 + 1];
  
-void PrintMinNumber(const int* numbers, int length)
+void printMinNumber(const int* numbers, int length)
 {
     if(numbers == nullptr || length <= 0)
         return;
@@ -79,7 +78,7 @@ void test(const char* testName, int* numbers, int length, const char* expectedRe
         printf("Expected result is: \t%s\n", expectedResult);
 
     printf("Actual result is: \t");
-    PrintMinNumber(numbers, length);
+    printMinNumber(numbers, length);
 
     printf("\n");
 }
