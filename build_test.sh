@@ -97,7 +97,7 @@ cmake ..
 
 for project in ${projects[*]}
 do
-  cd ${project}
+  cd "${project}"
   make
   ./"${project}"
   cd ..
